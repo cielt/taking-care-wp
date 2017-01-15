@@ -1,0 +1,203 @@
+// =====================================
+//
+//   Slideshow
+//
+// =====================================
+
+// -------------------------------------
+//   Vars
+// -------------------------------------
+
+$m--slideshow-height: em(480px);
+
+// -------------------------------------
+//   Submodules
+// -------------------------------------
+
+// ----- Header ----- //
+
+.v-divider:after {
+  @media (min-width: $g-m) {
+    display: inline-block;
+    font-weight: normal;
+    content: '|';
+    margin-left: $b-space-2;
+    margin-right: $b-space-2;
+  }
+}
+
+.header-date {
+  font-size: $b-fontSize-xs;
+  font-weight: 300;
+  font-family: $b-sans-fontFamily;
+  color: $grey4;
+}
+
+// ----- Slideshow Controls ----- //
+
+.slideshow {
+  position: relative;
+
+  .slideshow-controls {
+    position: absolute;
+    z-index: 2;
+    width: em(72px);
+    top: 100%;
+    left: 100%;
+    margin-top: em(-32px);
+    margin-left: em(-72px);
+  }
+
+  .slideshow-frame {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+.slideshow-marker {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  text-align: right;
+  line-height: em(32px);
+  font-family: $b-sans-fontFamily;
+  color:$grey5;
+  width: em(80px);
+  left: 100%;
+  margin-left: em(-80px);
+  top: 100%;
+  margin-top: em(-64px);
+}
+
+
+// SLICK plugin overrides
+
+.slideshow-controls {
+  .slick-prev, .slick-next {
+    position: relative;
+    top: inherit;
+    left: inherit;
+    right: inherit;
+    border-radius: $b-borderRad-1;
+    display: block;
+    float: left;
+    height: em(32px, 18px);
+    width: em(32px, 18px);
+    cursor: pointer;
+    border: $b-borderWidth-xs solid $grey6;
+    background: $grey6;
+    color: $grey5;
+    line-height: em(32px, 18px);
+    font-size: $b-fontSize-l;
+    padding: 0;
+    text-align: center;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+
+    &:before {
+      content: '';
+      display: none;
+    }
+
+    &:focus, &:hover {
+      border-color: $grey5;
+      color: $grey4;
+    }
+  }
+
+  .slick-next {
+    float: right;
+  }
+}
+
+.slick-dots {
+  position: relative;
+  bottom: inherit;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: right;
+}
+
+.slick-dots li {
+  position: relative;
+  display: none;
+  width: auto;
+  height: auto;
+  margin: 0 em(6px);
+  padding: 0;
+  cursor: pointer;
+
+  &.slick-active {
+    display: inline-block;
+  }
+}
+
+.slick-dots li button {
+  &:before {
+    display: none;
+  }
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  font-size: $b-fontSize-xs;
+  font-weight: normal;
+  line-height: normal;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 0;
+  color: $grey5;
+  border: 0;
+  outline: none;
+  background: $clear;
+}
+
+
+// ----- Slideshow Image ----- //
+
+.slide-image-frame {
+  @media (min-width: $g-m) {
+    height: $m--slideshow-height;
+    overflow: hidden;
+  }
+}
+
+
+// ----- Flexbox ----- //
+
+.flex-wrap-content-end {
+  @media (min-width: $g-m) {
+    @include flexbox();
+    flex-flow: column;
+    justify-content: flex-end;
+    height: $m--slideshow-height;
+  }
+}
+
+
+// m-- room for controls
+
+.controls-spacer {
+  width: 100%;
+  height: em(100px);  
+}
+
+.slide-info {
+  .slide-caption {
+    font-size: $b-fontSize-l;
+    color: $grey3;
+  }
+}

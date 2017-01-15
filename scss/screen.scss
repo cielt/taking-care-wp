@@ -1,0 +1,54 @@
+// =====================================
+//
+//   Taking Care <3
+//
+// =====================================
+
+//  mad props:
+//  - http://necolas.github.io/normalize.css/
+//  - http://mvcss.io/
+//  - http://www.basscss.com/
+
+// -------------------------------------
+//   Foundation
+// -------------------------------------
+
+@import "normalize";
+@import "helpers";
+@import "config";
+@import "base";
+@import "grid";
+@import "tc-style";
+@import "chapter";
+@import "slideshow";
+@import "milestones";
+@import "waypoints";
+
+// -------------------------------------
+//   Components
+// -------------------------------------
+
+
+// -------------------------------------
+//   Structures
+// -------------------------------------
+
+
+// -------------------------------------
+//   Vendor
+// -------------------------------------
+
+@import "plugins/slick/slick.scss";
+
+.marquee-arrows {
+  width: 100%;
+  top: 50%;
+  margin-top: em(-200px, 32px);
+}
+
+
+// -------------------------------------
+//   Tools
+// -------------------------------------
+
+@import "tools";

@@ -1,0 +1,647 @@
+// =====================================
+//
+//   TC Global Elements
+//
+// =====================================
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$logoIcoHeight: em(27px);
+$logoIcoWidth: em(28px);
+$marqueeMaxHeight: em(512px);
+
+// -------------------------------------
+//   Global
+// -------------------------------------
+
+// ----- Ico ~ Swallow ----- //
+
+.ico-swallow {
+  width: $logoIcoWidth;
+  height: $logoIcoHeight;
+  background: url('../images/sprite-ico-swallow.svg') $clear no-repeat top center;
+  background-size: em(28px) auto;
+}
+
+
+// ----- Header ----- //
+
+.header-bar {
+  color: $blueGrey0;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  top: 0;
+  left: 0;
+  
+  .overlay {
+    position: absolute;
+    z-index: 1;
+    background: $blueGrey0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include opacity(0);
+    transition: opacity 600ms ease 300ms;
+  }
+
+  .logo.home-link, .header-bar-block {
+    height: $logoIcoHeight;
+    line-height: $logoIcoHeight;
+  }
+
+  // home link
+  .home-link {
+    display: block;
+    color: $white;
+    letter-spacing: em(0.5px);
+    transition: all 0.3s ease;
+    border: none;
+
+    // taking care
+    .home-label {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal;
+      font-size: $b-fontSize-s;
+    }
+  }
+  
+  // menu button
+  .menu-btn {
+    @extend .px-2;
+    display: inline-block;
+    font-size: $b-fontSize-s;
+    font-family: $b-sans-fontFamily;
+    font-weight: 300;
+    line-height: em(28px, 14px);
+    vertical-align: middle;
+    color: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: $b-borderRad-1;
+    border: $b-borderWidth-xs solid $clear;
+    transition: all 0.3s ease;
+
+    &:focus, &:hover {
+      border-color: $white;  
+    }
+  }
+}
+
+.header-spacing {
+  height: 0;
+}
+
+// ----- Modules ----- //
+
+.date {
+  display: block;
+  color: $blueGrey0;
+  font-family: $b-sans-fontFamily;
+  font-size: $b-fontSize-s;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 1px; 
+}
+
+.text-col {
+  max-width: em(640px);
+  margin: 0 auto;
+
+  @media (min-width: $g-s) {
+    padding: 0 $b-space-4;
+  }
+}
+
+// marquee image frame
+.marquee-main {
+  display: table;
+  width: 100%;
+  position: relative;
+  background-color: $black;
+  height: 100vh;
+
+  .slide-frame, .cover-image-frame {
+    width: 100vw;
+  }
+}
+
+// site title
+.marquee-main.home-cover {
+  .title-block {
+    width: 100%;
+    top: 50%;
+    height: em(120px);
+    margin-top: em(-60px);
+    text-align: center;
+    color: white;
+    padding: $b-space-2;
+  }
+
+  // controls
+  .slideshow {
+    .slide-frame {
+      position: relative;
+      z-index: 1;
+    }
+  } 
+
+  .slide-control-btn {
+    display: block;
+    width: em(40px, 24px);
+    height: em(40px, 24px);
+    border-radius: 50%;
+    text-align: center;
+    font-size: $b-fontSize-xl;
+    line-height: em(40px, 24px);
+    border: $b-borderWidth-xs solid $clear;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    z-index: 3;
+
+    &.slide-refresh-btn {
+      background-color: rgba(141, 165, 179, 0.36);
+      position: absolute;
+      z-index: 3;
+      bottom: 0;
+      left: 0;
+      margin: $b-space-2;
+    }
+
+
+    &:focus, &:hover {
+      background-color: rgba(255, 255, 255, 0.36);
+    }
+  }  
+}
+
+
+.scroll-to-content-btn {
+  width: em(48px, 24px);
+  height: em(48px, 24px);
+  line-height: em(48px, 24px);
+  text-align: center;
+  font-size: $b-fontSize-xl;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  top: 100%;
+  margin-top: em(-58px, 24px); // 48+10
+  left: 50%;
+  margin-left: em(-24px, 24px); // 48/2
+  -webkit-animation: bounce 4s 2s infinite;
+  animation: bounce 4s 2s infinite;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  z-index: 3;
+
+  &:hover, &:focus {
+    -webkit-animation: none;
+    animation: bounce none;
+    background-color: rgba(255, 255, 255, 0.36);   
+  }
+}
+
+
+// ----- Home Page slideshow ----- //
+
+.slide-image, .cover-image-frame {
+  width: 100%; 
+  min-height: em(240px);
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  background: $black no-repeat center center;
+  background-size: cover;
+  top: 0;
+  left: 0;
+}
+
+.slide-image {
+  position: absolute;
+  z-index: 2;
+  @include opacity(0);
+  transition: opacity 1.6s ease;
+
+  &.current {
+    z-index: 3;
+    @include opacity(100);
+  }
+
+  // TODO: make JSON for SLIDES
+  &.slide-1 {
+    background-image: url(../images/slideshow/mom-breakaway-open-sea.jpg);
+  }
+
+  &.slide-2 {
+    background-image: url(../images/slideshow/memoriam-1-mom-solo-red-dress.jpg);
+  }
+
+  &.slide-3 {
+    background-image: url(../images/slideshow/memoriam-2-mom-dad-wedding.jpg);
+  }
+
+  &.slide-4 {
+    background-image: url(../images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);
+  }
+}
+
+.cover-image-frame {
+  &.cover-chapter-1 {
+    background-image: url(../images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);  
+  }
+}
+
+
+// -------------------------------------
+//   Global Navigation
+// -------------------------------------
+
+.site-nav-block {
+  color: $white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: em(240px);
+  background: $grey6;
+  -webkit-transition: -webkit-transform 0.3s ease, opacity 0s ease 0s;
+  transition: transform 0.3s ease, opacity 0s ease 0s;
+}
+
+.site-nav-wrapper {
+  position: relative;
+}
+
+.site-nav-menu {
+  @extend .list-reset;
+  font-size: $b-fontSize-s;
+
+  .site-nav-item {
+    margin-bottom: $b-space-2;
+  }
+
+  .site-nav-link {
+    color: $grey4;
+    text-decoration: none;
+    border: none;
+
+    &:hover, &:focus {
+      color: $white;
+    }
+  }
+}
+
+.close-menu {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $blueGrey0 !important;
+  font-size: $b-fontSize-s;
+  height: em(20px, 14px);
+  line-height: em(16px, 14px);
+  width: em(20px, 14px);
+  text-align: center;
+  border: none;
+}
+
+// ----- Layers ----- //
+
+.scaffold-inner {
+  position: relative;
+  z-index: 2;
+  min-height: 100%;
+  background: $white;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+// overlay - for when nav drawer is open
+
+.menu-overlay {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+// ----- Global Nav ----- //
+
+.nav-open {
+  overflow: hidden;
+
+  .site-nav-block {
+    overflow: auto;
+    -webkit-transform: translate3D(0, 0, 0);
+    -ms-transform: translate3D(0, 0, 0);
+    transform: translate3D(0, 0, 0);
+  }
+
+  .scaffold-inner {
+    height: 100%;
+    overflow: hidden;
+    -webkit-transform: translate3D(em(-240px), 0, 0);
+    -ms-transform: translate3D(em(-240px), 0, 0);
+    transform: translate3D(em(-240px), 0, 0);
+  }
+
+  .menu-overlay {
+    display: block;
+    z-index: 9;
+  }
+}
+
+
+
+// -------------------------------------
+//  Section Components
+// -------------------------------------
+
+// TODO: this will probably change
+.section-header {
+
+  .section-title {
+    display: inline-block;
+    letter-spacing: 1px;
+    vertical-align: bottom;
+    font-weight: 700;
+  }
+
+  @media (min-width: $g-m) {
+    line-height: em(36px);  
+  }
+}
+
+.section-actions {
+  font-family: $b-sans-fontFamily;
+  font-size: $b-fontSize-s;
+  color: $blueGrey0;
+
+  a, span {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: bottom;
+  }
+
+  .h-divider {
+    display: inline-block;
+    margin: 0 em(10px);
+    color: $grey3;
+  }
+}
+
+
+// -------------------------------------
+//  Tiles
+// -------------------------------------
+
+$tileW: 280px;
+$tileH: 340px;
+$tileImgW: 260px;
+$tileImgH: 260px;
+
+$m--tileW: 320px;
+$m--tileH: 380px;
+$m--tileImgW: 300px;
+$m--tileImgH: 300px;
+
+
+.tile-set {
+  @extend .cf;
+  text-align: center;
+
+  .tile {
+    @extend .va-t;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: 0 auto em(20px);
+    border: none;
+    
+    @media (min-width: $g-xs) {
+      width: em($tileW);
+      height: em($tileH);
+      padding: $b-space-2;
+      margin: 0 $b-space-4 $b-space-4;
+    }
+
+    @media (min-width: $g-m) {
+      width: em($m--tileW);
+      height: em($m--tileH);
+
+      &:nth-child(3n+2) {
+        margin: 0 2% em(20px);
+      }
+    }
+  }
+}
+
+// chapter links
+.tile {
+  text-decoration: none;
+  // img
+  .window-frame {
+    width: 100%;
+    height: em($tileImgH);
+    overflow: hidden;
+    
+    img { 
+      position: relative;
+      z-index: 1; 
+    }
+
+    .tile-overlay {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: $blueGrey0;
+      @include opacity(72);
+      transition: opacity 0.3s ease;
+    }
+
+    @media (min-width: $g-m) {
+      width: 100%;
+      height: em($m--tileImgH);    
+    }
+  }
+
+  // info
+  .tile-info {
+    .meta {
+      display: inline-block;
+      color: $blueGrey0;
+      font-family: $b-sans-fontFamily;
+      font-size: $b-fontSize-s;
+      font-weight: 300;
+    }
+
+    .tile-time {
+      width: em(100px, 14px);
+      text-align: left;
+      float: left;
+    }
+
+    .tile-location {
+      width: em(154px, 14px);
+      text-align: right;
+      float: right;
+    }
+
+    .tile-title {
+      color: $blueGrey0;
+      text-align: left;
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+// tile:hover
+.tile:hover {
+  .window-frame .tile-overlay {
+    @include opacity(0);
+  }
+
+  .tile-info .tile-title {
+    color: $blue0;
+  }
+}
+
+
+// -------------------------------------
+//  Stories - Feed
+// -------------------------------------
+
+.story-item {
+  width: 100%;
+  float: none;
+  margin-bottom: $b-space-5;
+
+  .story-author {
+    float: none;
+    margin: 0 auto $b-space-2;
+    text-align: center;
+
+    .author-tn.tn-round {
+      @extend .mx-auto;
+      width: em(128px);
+      height: em(128px);
+      border-radius: 50%;  
+      overflow: hidden;
+    }
+
+    .author-name {
+      font-family: $b-sans-fontFamily;
+      font-weight: 700;
+    }
+  }
+
+  .story-excerpt {
+    display: block;
+    margin: 0;
+  }
+
+  @media (min-width: $g-s) {
+    width: 47.5%;
+    float: left;
+
+    &:nth-child(2n+1) {
+      margin-right: 5%;
+    } 
+
+    .story-author {
+      float: left;
+    }
+
+    .story-excerpt {
+      margin-left: em(148px);      
+    }
+  }
+
+}
+
+
+// -------------------------------------
+//  Footer
+// -------------------------------------
+
+.footer {
+  position: relative;
+  z-index: 2;
+  background: $navy0;
+}
+
+.footer-content {
+  @extend .c-white;
+
+}
+
+
+// -------------------------------------
+//   Media Queries
+// -------------------------------------
+
+// ----- MQ - < 959px ----- //
+
+@media (max-width: $g-m) {
+  // HOME 
+  .marquee-main, .marquee-main .slide-image, .marquee-main .cover-image-frame {
+    height: 60vh;
+  }
+}
+
+
+// ----- MQ - < 480px ----- //
+@media (max-width: $g-xs) {
+  // HOME 
+  .marquee-main, .marquee-main .slide-image, .marquee-main .cover-image-frame {
+    height: 40vh;
+  }
+}
+
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@-webkit-keyframes bounce {
+  0%, 10%, 25%, 40%, 50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  30% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes bounce {
+  0%, 10%, 25%, 40%, 50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  30% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+

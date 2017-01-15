@@ -1,0 +1,145 @@
+// =====================================
+//
+//   Taking Care - Chapter
+//
+// =====================================
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+$marqueeHeight-g-l: 84vh;
+$marqueeHeight-g-m: 60vh;
+$marqueeHeight-g-xs: 40vh;
+
+$imgTileSize-2x: em(240px, 14px);
+$imgTileSize-1x: em(120px, 14px);
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.marquee-main.chapter-cover { 
+  height: 100%;
+  background-color: inherit;
+
+  .cover-image-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    @include opacity(48);
+    background: $black;
+  }
+
+  .cover-image-title {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    top: 50%;
+    height: em(120px);
+    margin-top: em(-60px);
+    text-align: center;
+  }
+}
+
+// -------------------------------------
+//   Submodules
+// -------------------------------------
+
+
+// v spacing for theme image
+.cover-image-spacing {
+  position: relative;
+  width: 100%;
+  height: $marqueeHeight-g-xs;
+  z-index: 1;
+
+  @media (min-width: $g-xs) {
+    height: $marqueeHeight-g-m;
+  }
+
+  @media (min-width: $g-m) {
+    height: $marqueeHeight-g-l;
+  }
+}
+
+// Theme background image
+// .marquee-main > .theme-image-bg
+
+.theme-image-bg {
+  width: 100%;
+  height: $marqueeHeight-g-xs;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-image: url(../images/slideshow/mom-breakaway-open-sea.jpg);
+  background-size: cover;
+
+  @media (min-width: $g-xs) {
+    height: $marqueeHeight-g-m;
+  }
+
+  @media (min-width: $g-m) {
+    height: $marqueeHeight-g-l;
+  }
+
+  &.theme-chapter-1 {
+    background-image: url(../images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);
+  }
+}
+
+
+// -------------------------------------
+//   Sidebar Pictures Preview
+// -------------------------------------
+
+// ------ TOOLS ------ //
+
+.xs--pl0 {
+  @media (min-width: $g-xs) {
+    padding-left: 0
+  }
+}
+
+.xs--pr0 {
+  @media (min-width: $g-xs) {
+    padding-right: 0
+  }
+}
+
+// ------ MASONRY ------ //
+
+.masonry-grid {
+  
+  // double gutter
+  .grid-item, .grid-sizer {
+    width: 22%;
+
+    &.grid-item--w2x {
+      width: 48%;
+    }
+
+    // single gutter
+    @media (min-width: $g-m) {
+      width: 30%;
+
+      &.grid-item--w2x {
+        width: 64%;
+      }
+    }
+  }
+
+  .gutter-sizer {
+    width: 4%;
+  }
+
+  .grid-item {
+    overflow: hidden;
+    height: auto;
+    margin-bottom: $b-space-2;
+  }
+}

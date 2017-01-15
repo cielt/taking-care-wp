@@ -1,0 +1,32 @@
+// -------------------------------------
+//   WayPoints
+// -------------------------------------
+
+.scroll-down, .theme-dark {
+  .header-bar {
+    // home link
+    .home-link {
+      color: $blueGrey0;
+  
+      .ico-swallow {
+        background-position: bottom center;
+      }
+    }
+    
+    // menu button
+    .menu-btn {
+      color: $blueGrey0;
+  
+      &:focus, &:hover {
+        border-color: $blueGrey0;  
+      }
+    }
+  }
+}
+
+
+.scroll-down {
+  .header-bar .overlay {
+    @include opacity(24);
+  }
+}
