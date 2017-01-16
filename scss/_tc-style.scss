@@ -21,7 +21,7 @@ $marqueeMaxHeight: em(512px);
 .ico-swallow {
   width: $logoIcoWidth;
   height: $logoIcoHeight;
-  background: url('../images/sprite-ico-swallow.svg') $clear no-repeat top center;
+  background: url('images/sprite-ico-swallow.svg') $clear no-repeat top center;
   background-size: em(28px) auto;
 }
 
@@ -234,25 +234,25 @@ $marqueeMaxHeight: em(512px);
 
   // TODO: make JSON for SLIDES
   &.slide-1 {
-    background-image: url(../images/slideshow/mom-breakaway-open-sea.jpg);
+    background-image: url(images/slideshow/mom-breakaway-open-sea.jpg);
   }
 
   &.slide-2 {
-    background-image: url(../images/slideshow/memoriam-1-mom-solo-red-dress.jpg);
+    background-image: url(images/slideshow/memoriam-1-mom-solo-red-dress.jpg);
   }
 
   &.slide-3 {
-    background-image: url(../images/slideshow/memoriam-2-mom-dad-wedding.jpg);
+    background-image: url(images/slideshow/memoriam-2-mom-dad-wedding.jpg);
   }
 
   &.slide-4 {
-    background-image: url(../images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);
+    background-image: url(images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);
   }
 }
 
 .cover-image-frame {
   &.cover-chapter-1 {
-    background-image: url(../images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);  
+    background-image: url(images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);  
   }
 }
 
@@ -278,15 +278,15 @@ $marqueeMaxHeight: em(512px);
   position: relative;
 }
 
-.site-nav-menu {
+.site-nav-menu > ul {
   @extend .list-reset;
   font-size: $b-fontSize-s;
 
-  .site-nav-item {
+  .page_item {
     margin-bottom: $b-space-2;
   }
 
-  .site-nav-link {
+  .page_item > a {
     color: $grey4;
     text-decoration: none;
     border: none;

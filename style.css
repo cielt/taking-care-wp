@@ -408,7 +408,7 @@ h6, .h6 {
   line-height: 1.2;
   margin-top: 0; }
 
-.list-reset, .site-nav-menu {
+.list-reset, .site-nav-menu > ul {
   list-style: none;
   margin: 0;
   padding: 0; }
@@ -1532,7 +1532,7 @@ a.button {
 .ico-swallow {
   width: 1.75em;
   height: 1.6875em;
-  background: url("../images/sprite-ico-swallow.svg") transparent no-repeat top center;
+  background: url("images/sprite-ico-swallow.svg") transparent no-repeat top center;
   background-size: 1.75em auto; }
 
 .header-bar {
@@ -1695,16 +1695,16 @@ a.button {
     -moz-opacity: 1;
     opacity: 1; }
   .slide-image.slide-1 {
-    background-image: url(../images/slideshow/mom-breakaway-open-sea.jpg); }
+    background-image: url(images/slideshow/mom-breakaway-open-sea.jpg); }
   .slide-image.slide-2 {
-    background-image: url(../images/slideshow/memoriam-1-mom-solo-red-dress.jpg); }
+    background-image: url(images/slideshow/memoriam-1-mom-solo-red-dress.jpg); }
   .slide-image.slide-3 {
-    background-image: url(../images/slideshow/memoriam-2-mom-dad-wedding.jpg); }
+    background-image: url(images/slideshow/memoriam-2-mom-dad-wedding.jpg); }
   .slide-image.slide-4 {
-    background-image: url(../images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg); }
+    background-image: url(images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg); }
 
 .cover-image-frame.cover-chapter-1 {
-  background-image: url(../images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg); }
+  background-image: url(images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg); }
 
 .site-nav-block {
   color: #fff;
@@ -1721,15 +1721,15 @@ a.button {
 .site-nav-wrapper {
   position: relative; }
 
-.site-nav-menu {
+.site-nav-menu > ul {
   font-size: 0.875em; }
-  .site-nav-menu .site-nav-item {
+  .site-nav-menu > ul .page_item {
     margin-bottom: 0.625em; }
-  .site-nav-menu .site-nav-link {
+  .site-nav-menu > ul .page_item > a {
     color: #bebebe;
     text-decoration: none;
     border: none; }
-    .site-nav-menu .site-nav-link:hover, .site-nav-menu .site-nav-link:focus {
+    .site-nav-menu > ul .page_item > a:hover, .site-nav-menu > ul .page_item > a:focus {
       color: #fff; }
 
 .close-menu {

@@ -106,22 +106,23 @@ add_action( 'widgets_init', 'taking_care_widgets_init' );
  */
 function taking_care_styles() {
 	wp_enqueue_style( 'tc-google-fonts', 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700', false );
-	wp_enqueue_style( 'taking-care-style', get_stylesheet_uri() ); 
+	wp_enqueue_style( 'font_awesome_css', get_template_directory_uri() . '/font-awesome.min.css', false );
+	wp_enqueue_style( 'taking-care-style', get_stylesheet_uri(), false ); 
 }
+add_action( 'wp_enqueue_scripts', 'taking_care_styles' );
+
 
 function taking_care_scripts() {
-	
-	wp_enqueue_script( 'tc-fontawesome-icons', 'https://use.fontawesome.com/3befb0232d.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'taking-care-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
+	wp_enqueue_script( 'jquery-waypoints', get_template_directory_uri() . '/js/lib/jquery.waypoints.min.js', array('jquery'), '2017', true );
+	wp_enqueue_script( 'taking-care-utilities', get_template_directory_uri() . '/js/utilities.js', array('jquery'), '2017', true );
+	wp_enqueue_script( 'taking-care-navigation', get_template_directory_uri() . '/js/mom.js', array('jquery', 'jquery-waypoints', 'taking-care-utilities'), '2017', true );
 	wp_enqueue_script( 'taking-care-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'taking_care_styles', 'taking_care_scripts' );
+add_action( 'wp_enqueue_scripts', 'taking_care_scripts' );
 
 /**
  * Implement the Custom Header feature.
