@@ -20,10 +20,14 @@ get_header(); ?>
   </div>
   <div id="home-slideshow" class="slideshow p-rel z1">
     <div class="slide-frame">
-      <div id="mom-breakaway-deck" class="slide-1 slide-image"></div>
-      <div id="mom-nebraska-red-dress" class="slide-2 slide-image"></div>
-      <div id="mom-dad-wedding-1" class="slide-3 slide-image"></div>
-      <div id="gong-gong-pwo-pwo-mom" class="slide-4 slide-image"></div>
+      <div id="" class="slide-7 slide-image"></div>
+      <div id="" class="slide-0 slide-image"></div>
+      <div id="" class="slide-1 slide-image"></div>
+      <div id="" class="slide-2 slide-image"></div>
+      <div id="" class="slide-3 slide-image"></div>
+      <div id="" class="slide-4 slide-image"></div>
+      <div id="" class="slide-5 slide-image"></div>
+      <div id="" class="slide-6 slide-image"></div>
     </div>  
   </div>
   <div class="slide-controls">

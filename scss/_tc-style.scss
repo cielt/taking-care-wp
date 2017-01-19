@@ -233,26 +233,42 @@ $marqueeMaxHeight: em(512px);
   }
 
   // TODO: make JSON for SLIDES
+  &.slide-7 {
+    background-image: url(images/slides/slides-7-mom-breakaway-open-sea.jpg);
+  }
+
+  &.slide-0 {
+    background-image: url(images/slides/slides-0-gong-gong-pwo-pwo-mom-1949.jpg);
+  }
+
   &.slide-1 {
-    background-image: url(images/slideshow/mom-breakaway-open-sea.jpg);
+    background-image: url(images/slides/slides-1-mom-dad-siu.jpg);
   }
 
   &.slide-2 {
-    background-image: url(images/slideshow/memoriam-1-mom-solo-red-dress.jpg);
+    background-image: url(images/slides/slides-2-mom-solo-red-dress.jpg);
   }
 
   &.slide-3 {
-    background-image: url(images/slideshow/memoriam-2-mom-dad-wedding.jpg);
+    background-image: url(images/slides/slides-3-mom-pong-shoulder.jpg);
   }
 
   &.slide-4 {
-    background-image: url(images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);
+    background-image: url(images/slides/slides-4-mom-dad-pong-nilla.jpg);
+  }
+
+  &.slide-5 {
+    background-image: url(images/slides/slides-5-swan-boat-kids.jpg);
+  }
+
+  &.slide-6 {
+    background-image: url(images/slides/slides-6-mom-dad-breakaway-deck.jpg);
   }
 }
 
 .cover-image-frame {
   &.cover-chapter-1 {
-    background-image: url(images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);  
+    background-image: url(images/slides/);  
   }
 }
 
