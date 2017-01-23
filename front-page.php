@@ -14,7 +14,8 @@
 get_header(); ?>
 
 <div class="marquee-main home-cover w-max mx-auto p-rel">
-  <div class="title-block p-abs z2">
+  <div class="hero-overlay z2"></div>
+  <div class="title-block p-abs z3">
     <h1 class="h1 m--ts-xxxl site-title c-white"><em><?php bloginfo( 'name' ); ?></em></h1>
     <span class="h3 db c-blueGrey0 tf-sans site-description light mt-1"><?php bloginfo( 'description' ); ?></span>
   </div>
