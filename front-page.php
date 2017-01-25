@@ -40,22 +40,23 @@ get_header(); ?>
 </div>
 <!-- Intro -->
 <div id="home-intro" class="section w-max max-gm mx-auto">
+  <?php while ( have_posts() ) : the_post(); ?>
   <div class="px-5 pt-6 pb-6">
     <div class="text-col mb-5">
       <h1 class="h1 c-blue0 t-alignC normal mb-1">Yen-Sheng Loretta Tu</h1>
       <span class="date t-alignC mb-5">June 29, 1948 &mdash; June 8, 2016</span>
       <!-- intro -->
-      <p class="ts-l m--ts-xl tf-sans light">Fusce id lacus tortor. Maecenas ut ligula lorem. Cras sit amet mi aliquam, efficitur felis scelerisque, iaculis diam. Nulla placerat ligula pharetra, egestas erat in, consectetur nunc.</p>
+      <?php if (get_field('home_page_intro')) : ?><p class="ts-l m--ts-xl tf-sans light"><?php echo get_field('home_page_intro') ?></p><?php endif;?>
       <hr class="hairline mt-5">
     </div>
     <!-- Mim -->
     <div class="text-col mb-5">
-      <h2 class="h2 mb-1">More Stuff About Mom</h2>
-      <div class="date mb-2"></div>
-      <p>Vivamus massa arcu, euismod et condimentum sit amet, iaculis ut eros. Nulla ultrices nisl ac nulla blandit varius. Etiam luctus, nisi id mattis ornare, odio tellus tincidunt quam, id sollicitudin nisl diam non ex. Maecenas aliquam nulla neque, vitae euismod arcu euismod ac. Vestibulum orci risus, venenatis id condimentum nec, egestas nec urna. Quisque vulputate velit non tortor convallis, non bibendum libero sagittis. Nunc congue, nisi vitae sodales pellentesque, ipsum nunc finibus lorem, et iaculis dui quam quis dui. Cras egestas turpis eget odio pulvinar, in viverra sapien scelerisque. Fusce sed malesuada mi. In ut tortor fringilla, bibendum lacus ut, lacinia arcu. In hac habitasse platea dictumst. Integer condimentum neque sed eros dapibus, in cursus velit eleifend. Nulla tincidunt scelerisque bibendum. Phasellus sagittis ornare laoreet. In lacinia justo a leo maximus congue.</p>
-      <p>Donec eu dapibus metus. Fusce dapibus turpis eget metus semper, in pellentesque nibh ultricies. Duis ac purus porttitor ante suscipit scelerisque in et velit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus neque nisi, vestibulum sed consectetur eget, mattis id nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In molestie gravida neque a aliquet. Suspendisse semper tristique velit, quis pellentesque leo semper at. Vivamus arcu orci, feugiat sit amet nulla et, facilisis venenatis urna. Aenean elementum, massa sit amet elementum aliquam, lectus dolor malesuada nisl, eu venenatis erat ligula eu magna. Mauris quis commodo risus. Nullam quam sapien, egestas ac nulla sit amet, lacinia vulputate urna. Donec lorem mauris, varius id est sit amet, faucibus suscipit purus. In consectetur eget turpis eu interdum.</p>
+      <h2 class="h2 mb-1"><?php if (get_field('home_page_section_title')) : ?><?php echo get_field('home_page_section_title') ?><?php endif;?></h2>
+      <!-- <div class="date mb-2"></div> -->
+        <?php the_content(); ?>
     </div>      
   </div>
+<?php endwhile?>
 </div>
 <!-- ################################################## Chapters ################################################## -->
 <div class="section bg-blueGrey1">
