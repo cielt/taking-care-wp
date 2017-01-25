@@ -30,11 +30,7 @@
           <a href="#" id="close-menu-btn" class="close-menu">
             <b class="fa fa-times" aria-hidden="true"></b><span class="vis-hidden">Close Menu</span>
           </a>
-          <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'container' => false, 'menu_id' => 'global-nav', 'menu_class' => 'site-nav-menu' ) ); ?>
-          <!-- <ul class="site-nav-menu">
-            <li class="site-nav-item nav-home" role="presentation"><a href="index.html" class="site-nav-link link-home">Home</a></li>
-            <li class="site-nav-item nav-early-years" role="presentation"><a href="chapter-1-early-years.html" class="site-nav-link link-early-year">Early Years</a></li>
-          </ul> -->
+          <?php wp_nav_menu( array( 'theme_location' => 'global_menu', 'container' => false, 'menu_id' => 'global-nav', 'menu_class' => 'site-nav-menu' ) ); ?>
         </div>
       </div>
       <div class="scaffold-inner">
@@ -54,4 +50,4 @@
           </div>
         </div>
         <div class="main p-rel z2">
-          <div class="header-spacing"></div>
+        <!-- spacing follows -->

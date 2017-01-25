@@ -13,6 +13,7 @@
 
 get_header(); ?>
 
+<div class="header-spacing"></div>
 <div class="marquee-main home-cover w-max mx-auto p-rel">
   <div class="hero-overlay z2"></div>
   <div class="title-block p-abs z3">
@@ -52,7 +53,6 @@ get_header(); ?>
     <!-- Mim -->
     <div class="text-col mb-5">
       <h2 class="h2 mb-1"><?php if (get_field('home_page_section_title')) : ?><?php echo get_field('home_page_section_title') ?><?php endif;?></h2>
-      <!-- <div class="date mb-2"></div> -->
         <?php the_content(); ?>
     </div>      
   </div>

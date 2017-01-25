@@ -11,7 +11,7 @@
 
 ?>
 
-<div class="footer p-rel z1">
+<div class="footer p-rel z2">
   <div class="w-max max-gl mx-auto px-5 pt-6 pb-6">  
     <div class="footer-content">
       <h4 class="h4 c-grey3 tf-sans upper bold mb-4">About This Site</h4>
