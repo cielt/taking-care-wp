@@ -52,29 +52,35 @@ get_header(); ?>
               <a href="slideshow.html" class="section-heading-cta">View Slideshow <b class="fa fa-camera" aria-hidden="true"></b></a>
             </div>
           </div>
-          <!-- Pictures: preview -->
+          <?php if( have_rows('chapter_image_gallery') ): ?>
+          <!-- Set up masonry blocks -->
           <div class="masonry-grid">
             <div class="grid-sizer"></div>
             <div class="gutter-sizer"></div>
-            <div class="grid-item grid-item--w2x">
-              <img class="fit" src="images/slideshow/197705-mom-pong-1month.jpg" alt="Mom with 1 month old pong">
-            </div>  
-            <div class="grid-item">
-              <img class="fit" src="images/slideshow/197811-mom-dad-pong-nilla.jpg" alt="Mom and Dad with Pong holding Nilla Wafers">
-            </div>     
-            <div class="grid-item grid-item--w2x">
-              <img class="fit" src="images/slideshow/memoriam-0-mom-dad-siu.jpg" alt="Mom and Dad at SIU">
-            </div>
-            <div class="grid-item">
-              <img class="fit" src="images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg" alt="Young Mom with Gong-Gong and Pwo-Pwo in the garden">
-            </div>     
-            <div class="grid-item grid-item--w2x">
-              <img class="fit" src="images/slideshow/memoriam-1-mom-solo-red-dress.jpg" alt="Mom in a red dress in Omaha">
-            </div>
-            <div class="grid-item">
-              <img class="fit" src="images/slideshow/197805-mom-pong-bottle.jpg" alt="Mom feeding Pong with the bottle">
-            </div>
-          </div>
+            <?php
+              $counter = 0;
+              while( have_rows('chapter_image_gallery') && $counter < 10): the_row(); 
+
+              // vars
+              $image = get_sub_field('slide_image');
+              $caption = get_sub_field('slide_caption');
+              $credit = get_sub_field('photo_credit');
+            ?>
+
+            <?php if( $counter % 2 == 0 ): ?>
+              <div class="grid-item grid-item--w2x">
+            <?php else : ?> 
+              <div class="grid-item">
+            <?php endif; ?>
+              <img class="fit" src="<?php echo $image; ?>" alt="<?php echo $caption ?>" />                
+          <?php $counter++; ?>
+        </div>
+
+      <?php endwhile; ?>
+
+      </div><!-- /masonry-grid -->
+
+        <?php endif; ?>
         </div>
       </div>
     </div>
