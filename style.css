@@ -2012,7 +2012,7 @@ a.button {
   position: fixed;
   top: 0;
   z-index: 2;
-  background-image: url(../images/slideshow/mom-breakaway-open-sea.jpg);
+  background-image: none;
   background-size: cover; }
   @media (min-width: 30em) {
     .theme-image-bg {
@@ -2020,8 +2020,6 @@ a.button {
   @media (min-width: 59.9375em) {
     .theme-image-bg {
       height: 84vh; } }
-  .theme-image-bg.theme-chapter-1 {
-    background-image: url(../images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg); }
 
 @media (min-width: 30em) {
   .xs--pl0 {

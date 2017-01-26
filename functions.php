@@ -121,6 +121,11 @@ function taking_care_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// scripts for Chapter page template
+	if ( is_page_template('page-chapter.php') ) {
+		wp_enqueue_script( 'taking-care-chapter', get_template_directory_uri() . '/js/chapter.js', array('jquery', 'imagesloaded', 'jquery-masonry', 'taking-care-utilities'), '2017', true );	
+	}
 }
 add_action( 'wp_enqueue_scripts', 'taking_care_scripts' );
 

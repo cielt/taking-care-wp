@@ -19,6 +19,7 @@ get_header(); ?>
     <div class="cover-image-title">
       <?php the_title( '<h1 class="h1 m--ts-xxxl c-white mb-1">', '</h1>' ); ?>
       <span class="h3 db c-blueGrey0 tf-sans light"><?php echo get_field('start_year') ?> &ndash; <?php echo get_field('end_year') ?></span>
+      <div class="vis-hidden cover-img-src" data-img-src="<?php echo get_field('cover_image') ?>"></div>
     </div>
     <a href="#chapter-intro" class="scroll-to-content-btn c-white" data-offset="0">
       <b class="fa fa-angle-down fa-2x" aria-hidden="true"></b>

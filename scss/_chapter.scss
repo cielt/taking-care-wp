@@ -76,7 +76,7 @@ $imgTileSize-1x: em(120px, 14px);
   position: fixed;
   top: 0;
   z-index: 2;
-  background-image: url(../images/slideshow/mom-breakaway-open-sea.jpg);
+  background-image: none;
   background-size: cover;
 
   @media (min-width: $g-xs) {
@@ -85,10 +85,6 @@ $imgTileSize-1x: em(120px, 14px);
 
   @media (min-width: $g-m) {
     height: $marqueeHeight-g-l;
-  }
-
-  &.theme-chapter-1 {
-    background-image: url(../images/slideshow/gong-gong-pwo-pwo-mom-1949.jpg);
   }
 }
 
