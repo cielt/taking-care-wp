@@ -8,10 +8,8 @@
         $heroImgScreen = $('.theme-image-bg'),
         chapterCoverImage = $('.cover-img-src').data('imgSrc');
 
-    console.log('set the cover image '+ chapterCoverImage);
     $heroImgScreen.css({ 'background-image': 'url('+ chapterCoverImage +')' });
          
-
     $grid.imagesLoaded(
       function () {
         $grid.masonry({
