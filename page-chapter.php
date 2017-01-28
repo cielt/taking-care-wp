@@ -98,72 +98,55 @@ get_header(); ?>
           <th class="header-year vis-hidden">Year</th>
           <th class="header-milestones vis-hidden">Milestones</th>
         </tr>
-        <!-- 1949 -->
+      <?php
+          while( have_rows('chapter_milestones')): the_row(); 
+
+          // vars
+            $rows = get_field('chapter_milestones');
+            $row_count = count($rows);
+            $year = get_sub_field('milestone_year');
+            $milestone_year_set = get_sub_field('milestone_year_set');
+            $outer_loop_counter = 0;
+      ?>
         <tr>
-          <td class="year-marker">1948</td>
+          <td class="year-marker"><?php echo $year; ?></td>
           <td class="year-milestones">
             <table class="year-milestone-details">
-              <tr>
-                <td>
-                  <div class="g">
-                    <div class="milestone-meta g-b g-b--1of1 g-b--xs--4of12">
+              <?php 
+                while( have_rows('milestone_year_set')): the_row();
+                foreach($milestone_year_set as $milestone_item) : 
+                  $milestone_date = get_sub_field('milestone_date');
+                  $milestone_location = get_sub_field('milestone_location');
+                  $milestone_summary = get_sub_field('milestone_summary'); ?>
+                  <tr>
+                    <td>
                       <div class="g">
-                        <div class="milestone-date g-b g-b--1of1 g-b--s--5of12">June 29</div>
-                        <span class="milestone-location g-b g-b--1of1 g-b--s--7of12">Peking, China</span>
+                        <div class="milestone-meta g-b g-b--1of1 g-b--xs--4of12">
+                          <div class="g">
+                            <div class="milestone-date g-b g-b--1of1 g-b--s--5of12"><?php echo $milestone_date; ?></div>
+                            <span class="milestone-location g-b g-b--1of1 g-b--s--7of12"><?php echo $milestone_location; ?></span>
+                          </div>
+                        </div>
+                        <div class="milestone-details g-b g-b--1of1 g-b--xs--8of12">
+                          <?php echo $milestone_summary; ?>  
+                        </div>
                       </div>
-                    </div>
-                    <div class="milestone-details g-b g-b--1of1 g-b--xs--8of12">
-                      <p>Born Yen-Sheng Loretta Tu to Ching-Tao Liu and Shao-Chih Liu</p>  
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <!-- v spacing -->
-        <tr class="v-spacing" role="presentation">
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td class="year-marker">1949</td>
-          <td class="year-milestones">
-            <table class="year-milestone-details">
-              <tr>
-                <td>
-                  <div class="g">
-                    <div class="milestone-meta g-b g-b--1of1 g-b--xs--4of12">
-                      <div class="g">
-                        <div class="milestone-date g-b g-b--1of1 g-b--s--5of12">June 29</div>
-                        <span class="milestone-location g-b g-b--1of1 g-b--s--7of12">Peking, China</span>
-                      </div>
-                    </div>
-                    <div class="milestone-details g-b g-b--1of1 g-b--xs--8of12">
-                      <p>Born Yen-Sheng Loretta Tu to Ching-Tao Liu and Shao-Chih Liu</p> 
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="g">
-                    <div class="milestone-meta g-b g-b--1of1 g-b--xs--4of12">
-                      <div class="g">
-                        <div class="milestone-date g-b g-b--1of1 g-b--s--5of12">June 29</div>
-                        <span class="milestone-location g-b g-b--1of1 g-b--s--7of12">Peking, China</span>
-                      </div>
-                    </div>
-                    <div class="milestone-details g-b g-b--1of1 g-b--xs--8of12">
-                      <p>Born Yen-Sheng Loretta Tu to Ching-Tao Liu and Shao-Chih Liu</p> 
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
+                    </td>
+                  </tr>  
+                <?php endforeach;
+                  endwhile;
+                  $outer_loop_counter++; ?>
+              </table>  
+            </td>
+          </tr>
+          <?php if (get_row_index() != ($row_count - 1)): ?>
+          <tr class="v-spacing" role="presentation">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <?php endif; ?>    
+      <?php endwhile; ?>
+     </table>
     </div>
   </div>
 </div>    
