@@ -1,12 +1,7 @@
 <?php
 /**
- * The main template file.
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * Template Name: Taking Care Home Page
  *
  * @package Taking_Care
  */
@@ -64,134 +59,26 @@ get_header(); ?>
     <div class="section-header cf">
       <h2 class="ts-l c-blueGrey0 mb-4 tf-sans ts-s upper section-title">Chapters</h2>
     </div>
+    <!-- Chapters Loop -->
+    <?php $chapter_pages = get_pages( array( 'meta_key' => 'is_chapter', 'meta_value' => true, 'sort_order' => 'ASC' ) ); ?>
     <div class="tile-set">
-      <!-- 1. Early Years -->
+    <?php foreach ( $chapter_pages as $chapter ) : ?>
       <a class="tile" href="" data-chapter-index="1">
         <div class="window-frame p-rel mb-1">
-          <img class="fit p-rel z1" src="images/slideshow/tn/gong-gong-pwo-pwo-mom-1949-tn.jpg" alt="">
+          <?php echo wp_get_attachment_image($chapter->cover_image, 'home-chapter-tile', "", array( "class" => "p-rel z1" )); ?>
           <div class="tile-overlay p-abs z2"></div>
         </div>
         <div class="tile-info">
           <div class="cf mb-1">
-            <span class="tile-time meta">1948 &ndash; 1966</span>
-            <span class="tile-location meta">Taipei, Taiwan</span>
+            <span class="tile-time meta"><?php echo ($chapter->start_year . ' &ndash; ' . $chapter->end_year); ?></span>
+            <span class="tile-location meta"><?php echo ($chapter->chapter_location); ?></span>
           </div>
-          <h3 class="tile-title h3">Early Years</h3>
+          <h3 class="tile-title h3"><?php echo $chapter->post_title; ?></h3>
         </div>
-      </a>
-      <!-- 2. NTU -->
-      <a class="tile" href="" data-chapter-index="2">
-        <div class="window-frame p-rel mb-1">
-          <img class="fit p-rel z1" src="images/slideshow/tn/mom-graduate-portrait-tn.jpg" alt="">
-          <div class="tile-overlay p-abs z2"></div>
-        </div>
-        <div class="tile-info">
-          <div class="cf mb-1">
-            <span class="tile-time meta">1966 &ndash; 1970</span>
-            <span class="tile-location meta">Taipei, Taiwan</span>
-          </div>
-          <h3 class="tile-title h3">National Taiwan University</h3>
-        </div>
-      </a>
-      <!-- 3. SIU -->
-      <a class="tile" href="" data-chapter-index="3">
-        <div class="window-frame p-rel mb-1">
-          <img class="fit p-rel z1" src="images/slideshow/tn/mom-siu-campus-tn.jpg" alt="">
-          <div class="tile-overlay p-abs z2"></div>
-        </div>
-        <div class="tile-info">
-          <div class="cf mb-1">
-            <span class="tile-time meta">1970 &ndash; 1972</span>
-            <span class="tile-location meta">Carbondale, IL</span>
-          </div>
-          <h3 class="tile-title h3">Southern Illinois University</h3>
-        </div>
-      </a>
-      <!-- 4. Cornell -->
-      <a class="tile" href="" data-chapter-index="4">
-        <div class="window-frame p-rel mb-1">
-          <img class="fit p-rel z1" src="images/slideshow/tn/mom-dad-wedding-tn.jpg" alt="">
-          <div class="tile-overlay p-abs z2"></div>
-        </div>
-        <div class="tile-info">
-          <div class="cf mb-1">
-            <span class="tile-time meta">1972 &ndash; 1976</span>
-            <span class="tile-location meta">Ithaca, NY</span>
-          </div>
-          <h3 class="tile-title h3">Cornell University</h3>
-        </div>
-      </a>
-      <!-- 5. Stanford -->
-      <a class="tile" href="" data-chapter-index="5">
-        <div class="window-frame p-rel mb-1">
-          <img class="fit p-rel z1" src="images/slideshow/tn/mom-baby-pong-tn.jpg" alt="">
-          <div class="tile-overlay p-abs z2"></div>
-        </div>
-        <div class="tile-info">
-          <div class="cf mb-1">
-            <span class="tile-time meta">1976 &ndash; 1980</span>
-            <span class="tile-location meta">Palo Alto, CA</span>
-          </div>
-          <h3 class="tile-title h3">Stanford University</h3>
-        </div>
-      </a>
-      <!-- 6. Cherry Ridge Road -->
-      <a class="tile" href="" data-chapter-index="6">
-        <div class="window-frame p-rel mb-1">
-          <img class="fit p-rel z1" src="images/slideshow/tn/mom-kids-swan-boat-tn.jpg" alt="">
-          <div class="tile-overlay p-abs z2"></div>
-        </div>
-        <div class="tile-info">
-          <div class="cf mb-1">
-            <span class="tile-time meta">1980 &ndash; 1992</span>
-            <span class="tile-location meta">State College, PA</span>
-          </div>
-          <h3 class="tile-title h3">115 Cherry Ridge Road</h3>
-        </div>
-      </a>
-      <!-- 7. Shagbark Court -->
-      <a class="tile" href="" data-chapter-index="7">
-        <div class="window-frame p-rel mb-1">
-          <img class="fit p-rel z1" src="images/slideshow/tn/mom-dad-bryce-tn.jpg" alt="">
-          <div class="tile-overlay p-abs z2"></div>
-        </div>
-        <div class="tile-info">
-          <div class="cf mb-1">
-            <span class="tile-time meta">1992 &ndash; 2003</span>
-            <span class="tile-location meta">State College, PA</span>
-          </div>
-          <h3 class="tile-title h3">2399 Shagbark Court</h3>
-        </div>
-      </a>
-      <!-- 8. An Empty Nest -->
-      <a class="tile" href="" data-chapter-index="8">
-        <div class="window-frame p-rel mb-1">
-          <img class="fit p-rel z1" src="images/slideshow/tn/mom-dad-breakaway-tn.jpg" alt="">
-          <div class="tile-overlay p-abs z2"></div>
-        </div>
-        <div class="tile-info">
-          <div class="cf mb-1">
-            <span class="tile-time meta">2004 &ndash; 2016</span>
-            <span class="tile-location meta">State College, PA</span>
-          </div>
-          <h3 class="tile-title h3">Empty Nest</h3>
-        </div>
-      </a>
-      <!-- 9. Afterword -->
-      <a class="tile" href="" data-chapter-index="2">
-        <div class="window-frame p-rel mb-1">
-          <img class="fit p-rel z1" src="images/slideshow/tn/afterword-friends-ccmp-tn.jpg" alt="">
-          <div class="tile-overlay p-abs z2"></div>
-        </div>
-        <div class="tile-info">
-          <div class="cf mb-1">
-            <span class="tile-time meta">2016 &ndash; present</span>
-            <span class="tile-location meta">State College, PA</span>
-          </div>
-          <h3 class="tile-title h3">Afterword</h3>
-        </div>
-      </a>
-    </div>  
+      </a>    
+    <?php endforeach; ?>
+    </div>
+    
   </div>  
 </div>
 <!-- ################################################## Stories ################################################## -->
