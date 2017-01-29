@@ -108,6 +108,11 @@ function taking_care_styles() {
 	wp_enqueue_style( 'tc-google-fonts', 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700', false );
 	wp_enqueue_style( 'font_awesome_css', get_template_directory_uri() . '/font-awesome.min.css', false );
 	wp_enqueue_style( 'taking-care-style', get_stylesheet_uri(), false ); 
+
+	// slick CSS
+	if ( is_page_template('page-chapter-slideshow.php') ) {
+		wp_enqueue_style( 'slick-carousel-style', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css', false ); 	
+	}
 }
 add_action( 'wp_enqueue_scripts', 'taking_care_styles' );
 
@@ -125,6 +130,12 @@ function taking_care_scripts() {
 	// scripts for Chapter page template
 	if ( is_page_template('page-chapter.php') ) {
 		wp_enqueue_script( 'taking-care-chapter', get_template_directory_uri() . '/js/chapter.js', array('jquery', 'imagesloaded', 'jquery-masonry', 'taking-care-utilities'), '2017', true );	
+	}
+
+	// scripts for Chapter slideshow template
+	if ( is_page_template('page-chapter-slideshow.php') ) {
+		wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array('jquery'), '2017', true );
+		wp_enqueue_script( 'taking-care-chapter-slideshow', get_template_directory_uri() . '/js/slideshow.js', array('jquery', 'slick', 'taking-care-utilities'), '2017', true );	
 	}
 }
 add_action( 'wp_enqueue_scripts', 'taking_care_scripts' );
