@@ -29,7 +29,8 @@
       fade: true,
       lazyLoad: 'ondemand',
       dots: true,
-      appendDots: $('.slideshow-marker')
+      appendDots: $('.slideshow-marker'),
+      adaptiveHeight: true
     });
 
   });
