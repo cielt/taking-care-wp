@@ -751,6 +751,12 @@ strong, .bold {
   }
 }
 
+.m--pa2 {
+  @media (min-width: $g-m) {
+    padding: $b-space-2;
+  }
+}
+
 
 // -------------------------------------
 //   FX

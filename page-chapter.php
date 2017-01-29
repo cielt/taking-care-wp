@@ -32,8 +32,8 @@ get_header(); ?>
   <div class="w-max max-gl mx-auto px-5 pt-6 pb-6"> 
     <div class="g">
       <!-- Intro Story -->
-      <div class="g-b g-b--1of1 g-b--m--6of12">
-        <div class="pa-2">
+      <div class="g-b g-b--1of1 g-b--m--6of12 mb-5 m--mb0">
+        <div class="m--pa2">
           <span class="date mb-2"><?php echo get_field('start_year') ?> &mdash; <?php echo get_field('end_year') ?></span>
           <?php the_title( '<h1 class="h2 c-blue0 normal mb-1">', '</h1>' ); ?>
           <?php the_content(); ?>
@@ -42,7 +42,7 @@ get_header(); ?>
       <div class="g-b g-b--1of1 g-b--m--1of12">&nbsp;</div>
       <!-- Images Preview -->
       <div class="g-b g-b--1of1 g-b--m--5of12">
-        <div class="pa-2">
+        <div class="m--pa2">
           <div class="section-header g mb-4">
             <div class="g-b g-b--1of1 g-b--xs--6of12 px-0">
               <h2 class="ts-l c-blueGrey0 mb-1 m--mb0 tf-sans upper section-title">Pictures</h2>

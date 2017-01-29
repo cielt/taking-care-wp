@@ -2783,6 +2783,10 @@ strong, .bold {
     padding-left: 0.3125em;
     padding-right: 0.3125em; } }
 
+@media (min-width: 59.9375em) {
+  .m--pa2 {
+    padding: 0.625em; } }
+
 .shady {
   box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.2); }
 
