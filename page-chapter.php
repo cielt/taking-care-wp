@@ -49,7 +49,12 @@ get_header(); ?>
             </div>
             <div class="section-actions g-b g-b--1of1 g-b--xs--6of12 px-0 xs--t-alignR">
               <!-- TODO: add fa icon -->
-              <a href="slideshow.html" class="section-heading-cta">View Slideshow <b class="fa fa-camera" aria-hidden="true"></b></a>
+              <?php $current_page_id = get_the_ID();
+                $slideshow_wp_query = new WP_Query();
+                $slideshow_children = $slideshow_wp_query->query(array('post_type' => 'page', 'meta_key' => 'page_type', 'meta_value' => 'chapter_slideshow', 'child_of' => $current_page_id));?>
+              <?php foreach ( $slideshow_children as $slideshow ) : ?>
+                <a href="<?php echo get_permalink($slideshow); ?>" class="section-heading-cta">View Slideshow <b class="fa fa-camera" aria-hidden="true"></b></a>
+              <?php endforeach; ?>
             </div>
           </div>
           <?php if( have_rows('chapter_image_gallery') ): ?>
