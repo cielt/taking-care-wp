@@ -63,7 +63,7 @@ get_header(); ?>
     <?php $chapter_pages = get_pages( array( 'meta_key' => 'is_chapter', 'meta_value' => true, 'sort_order' => 'ASC' ) ); ?>
     <div class="tile-set">
     <?php foreach ( $chapter_pages as $chapter ) : ?>
-      <a class="tile" href="" data-chapter-index="1">
+      <a class="tile" href="<?php echo get_permalink($chapter); ?>">
         <div class="window-frame p-rel mb-1">
           <?php echo wp_get_attachment_image($chapter->cover_image, 'home-chapter-tile', "", array( "class" => "p-rel z1" )); ?>
           <div class="tile-overlay p-abs z2"></div>
