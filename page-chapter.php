@@ -51,7 +51,7 @@ get_header(); ?>
               <!-- TODO: add fa icon -->
               <?php $current_page_id = get_the_ID();
                 $slideshow_wp_query = new WP_Query();
-                $slideshow_children = $slideshow_wp_query->query(array('post_type' => 'page', 'meta_key' => 'page_type', 'meta_value' => 'chapter_slideshow', 'child_of' => $current_page_id));?>
+                $slideshow_children = $slideshow_wp_query->query(array('post_type' => 'page', 'meta_key' => 'page_template', 'meta_value' => 'chapter_slideshow', 'post_parent' => $current_page_id));?>
               <?php foreach ( $slideshow_children as $slideshow ) : ?>
                 <a href="<?php echo get_permalink($slideshow); ?>" class="section-heading-cta">View Slideshow <b class="fa fa-camera" aria-hidden="true"></b></a>
               <?php endforeach; ?>
@@ -72,7 +72,7 @@ get_header(); ?>
               $credit = get_sub_field('photo_credit');
             ?>
 
-            <?php if( $counter % 2 == 0 ): ?>
+            <?php if( $counter == 0 || $counter == 7): ?>
               <div class="grid-item grid-item--w2x">
             <?php else : ?> 
               <div class="grid-item">

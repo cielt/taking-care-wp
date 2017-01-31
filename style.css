@@ -2004,7 +2004,7 @@ a.button {
       height: 60vh; } }
   @media (min-width: 59.9375em) {
     .cover-image-spacing {
-      height: 84vh; } }
+      height: 100vh; } }
 
 .theme-image-bg {
   width: 100%;
@@ -2019,7 +2019,7 @@ a.button {
       height: 60vh; } }
   @media (min-width: 59.9375em) {
     .theme-image-bg {
-      height: 84vh; } }
+      height: 100vh; } }
 
 @media (min-width: 30em) {
   .xs--pl0 {
