@@ -2160,10 +2160,20 @@ a.button {
     border: 0;
     padding: 0; }
 
-@media (min-width: 59.9375em) {
-  .slide-image-frame {
-    height: 30em;
-    overflow: hidden; } }
+.slide-image-frame {
+  max-height: 30em;
+  text-align: center;
+  overflow: hidden; }
+  .slide-image-frame img {
+    width: 100%;
+    height: auto; }
+  @media (min-width: 59.9375em) {
+    .slide-image-frame {
+      height: 30em; }
+      .slide-image-frame img {
+        display: inline-block !important;
+        height: 100%;
+        width: auto; } }
 
 @media (min-width: 59.9375em) {
   .flex-wrap-content-end {

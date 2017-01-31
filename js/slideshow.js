@@ -22,6 +22,7 @@
     });
 
     $slideshowFrame.slick({
+      accessibility: true,
       arrows: true,
       appendArrows: $('#slideshow-controls .slideshow-arrows'),
       prevArrow: '<a href="#" class="slick-prev"><span class="vis-hidden">previous</span><b class="fa fa-chevron-left" aria-hidden="true"></b></a>',

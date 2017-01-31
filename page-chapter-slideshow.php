@@ -46,11 +46,11 @@ get_header(); ?>
             <div class="slideshow-slide g c-white" data-index="<?php echo $counter; ?>">
             <div class="g-b g-b--1of1 g-b--m--8of12 px-0 m--px1">
               <div class="slide-image-frame mb-4 m--mb0">
-                <img class="fit" src="<?php echo $image; ?>" alt="">
+                <img class="" data-lazy="<?php echo $image; ?>" alt="">
               </div>    
             </div>
             <div class="g-b g-b--1of1 g-b--m--4of12 px-0 m--px1 flex-wrap-content-end">
-              <div class="slide-info m--pl2 flex-item-content-end">
+              <div class="slide-info m--pl2 flex-item-content-end t-alignL">
                 <p class="slide-caption mb-2"><?php echo $caption; ?></p>
                 <?php if (isset($credit)) {
                   echo '<p class="slide-meta-info ts-s tf-sans c-grey5 lh-reset light">' . $credit . '</p>';    
