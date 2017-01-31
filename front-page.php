@@ -60,7 +60,7 @@ get_header(); ?>
       <h2 class="ts-l c-blueGrey0 mb-4 tf-sans ts-s upper section-title">Chapters</h2>
     </div>
     <!-- Chapters Loop -->
-    <?php $chapter_pages = get_pages( array( 'meta_key' => 'page_template', 'meta_value' => 'chapter_page', 'sort_order' => 'ASC' ) ); ?>
+    <?php $chapter_pages = get_pages( array( 'meta_key' => 'page_template', 'meta_value' => 'chapter_page', 'sort_column' => 'menu_order', 'sort_order' => 'ASC' ) ); ?>
     <div class="tile-set">
     <?php foreach ( $chapter_pages as $chapter ) : ?>
       <a class="tile" href="<?php echo get_permalink($chapter); ?>">
