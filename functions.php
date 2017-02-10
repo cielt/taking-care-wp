@@ -87,6 +87,17 @@ function taking_care_content_width() {
 add_action( 'after_setup_theme', 'taking_care_content_width', 0 );
 
 /**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -103,6 +114,49 @@ function taking_care_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'taking_care_widgets_init' );
+
+/* ========================================================================================================================
+
+Custom Post Types - include custom post types and taxonimies here e.g.
+
+e.g. require_once( 'custom-post-types/your-custom-post-type.php' );
+
+======================================================================================================================== */
+
+/* STORY custom post type */
+
+add_action('init', 'register_story', 1); // Set priority to avoid plugin conflicts
+function register_story() { // A unique name for our function
+ 	$labels = array( // Used in the WordPress admin
+		'name' => _x('Stories', 'post type general name'),
+		'singular_name' => _x('Story', 'post type singular name'),
+		'add_new' => _x('Add New', 'Story'),
+		'add_new_item' => __('Add New Story'),
+		'edit_item' => __('Edit Story'),
+		'new_item' => __('New Story'),
+		'view_item' => __('View Story'),
+		'search_items' => __('Search Stories'),
+		'not_found' =>  __('Nothing found'),
+		'not_found_in_trash' => __('Nothing found in Trash')
+	);
+	$args = array(
+		'labels' => $labels, // Set above
+		'public' => true, // Make it publicly accessible
+		'rewrite' => array('slug' => '/stories'),
+		'hierarchical' => false, // No parents and children here
+		'menu_position' => 5, // Appear right below "Posts"
+		'has_archive' => true, // Activate the archive
+		'supports' => array('title','editor','comments','thumbnail')
+	);
+
+	register_post_type( 'story', $args ); // Create the post type, use options above
+	
+	register_taxonomy_for_object_type('category', 'story');
+	register_taxonomy_for_object_type('post_tag', 'story');
+	
+	flush_rewrite_rules();
+}
+
 
 /**
  * Enqueue scripts and styles.
@@ -133,6 +187,11 @@ function taking_care_scripts() {
 	// scripts for Chapter page template
 	if ( is_page_template('page-chapter.php') ) {
 		wp_enqueue_script( 'taking-care-chapter', get_template_directory_uri() . '/js/chapter.js', array('jquery', 'imagesloaded', 'jquery-masonry', 'taking-care-utilities'), '2017', true );	
+	}
+
+	// scripts for Stories page template
+	if ( is_page_template('page-stories.php') ) {
+		wp_enqueue_script( 'taking-care-stories', get_template_directory_uri() . '/js/stories.js', array('jquery', 'imagesloaded', 'jquery-masonry', 'taking-care-utilities'), '2017', true );	
 	}
 
 	// scripts for Chapter slideshow template

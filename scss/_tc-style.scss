@@ -404,7 +404,18 @@ $marqueeMaxHeight: em(512px);
   }
 }
 
+// -------------------------------------
+//  Story Components
+// -------------------------------------
 
+.kicker {
+  display: block;
+  letter-spacing: 2px;
+  font-size: $b-fontSize-s;
+  text-transform: uppercase;
+  color: $blueGrey0;
+  font-family: $b-sans-fontFamily;
+}
 
 // -------------------------------------
 //  Section Components
@@ -468,6 +479,7 @@ $m--tileImgH: 300px;
     display: inline-block;
     width: auto;
     height: auto;
+    max-width: 100%;
     margin: 0 auto em(20px);
     border: none;
     

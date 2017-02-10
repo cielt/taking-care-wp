@@ -38,6 +38,7 @@ $slideshow-height: em(240px);
 
 .slideshow {
   position: relative;
+  padding-bottom: em(48px);
 
   .slideshow-controls {
     position: absolute;
@@ -52,6 +53,10 @@ $slideshow-height: em(240px);
   .slideshow-frame {
     position: relative;
     z-index: 1;
+  }
+
+  @media (min-width: $g-m) {
+    padding-bottom: 0;
   }
 }
 

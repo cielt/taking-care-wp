@@ -20,7 +20,7 @@
 <?php wp_head(); ?>
 </head>
 <!--<body class="nav-closed " data-layout="tc-home">-->
-<body <?php if (is_page_template('page-chapter-slideshow.php')) { body_class('nav-closed theme-dark'); } else { body_class('nav-closed'); }  ?> 
+<body <?php if (is_page_template('page-chapter-slideshow.php' || is_page_template('page-stories.php'))) { body_class('nav-closed theme-dark'); } else if (is_single()) { body_class('nav-closed scroll-down'); } else { body_class('nav-closed'); }  ?> 
   data-layout="<?php if (is_page_template('page-chapter-slideshow.php')) { echo 'tc-slideshow'; } else if (is_page_template('page-chapter.php')) { echo 'tc-chapter'; } else if (is_page_template('front-page.php')) { echo 'tc-home'; }  ?>">
   <div id="page" class="page">
   	<a class="skip-link screen-reader-text vis-hidden" href="#content"><?php esc_html_e( 'Skip to content', 'taking-care' ); ?></a>
