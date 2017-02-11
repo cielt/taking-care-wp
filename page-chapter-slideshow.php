@@ -13,16 +13,17 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); 
   $parents = get_post_ancestors( $post->ID );
   $parent_id = ($parents) ? $parents[0]: $post->ID;
-  $parent_title = get_the_title( $parent_id ); ?>
+  $parent_title = get_the_title( $parent_id ); 
+  $parent_permalink = get_permalink( $parent_id ); ?>
 
   <div class="header-spacing"></div>
   <!-- ################################################## Slideshow ################################################## -->
   <!-- Intro -->
-  <div id="slideshow-section" class="section">
+  <div id="slideshow-section">
     <div class="w-max max-gl mx-auto px-5 pt-6 pb-6"> 
       <div class="header-slideshow pa-2 mb-5">
         <h1 class="t-alignC c-blueGrey0">
-          <?php echo $parent_title; ?>
+          <a href="<?php echo $parent_permalink; ?>"><?php echo $parent_title; ?></a>
           <span class="v-divider"></span><span class="header-date db m--dib"><?php echo the_field('start_year', $parent_id) ?> &ndash; <?php echo the_field('end_year', $parent_id) ?></span>
         </h1>  
       </div>

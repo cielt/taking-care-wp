@@ -33,7 +33,7 @@ get_header(); ?>
       <div class="m--pa2">
         <div class="section-header g mb-4">
           <div class="g-b g-b--1of1 px-0">
-            <h2 class="ts-l c-blueGrey0 mb-1 m--mb0 tf-sans upper section-title"><a href="/stories">Stories</a></h2>
+            <h2 class="ts-l c-blueGrey0 mb-1 m--mb0 tf-sans upper section-title">Stories</h2>
           </div>
         </div>
         <?php

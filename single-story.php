@@ -20,7 +20,7 @@ get_header(); ?>
   <div class="w-max max-gm mx-auto px-5 pt-6 pb-6"> 
     <div class="story pt-4 pb-6">
       <div class="section-header mb-4 t-alignC m--px6">
-        <span class="kicker mb-2">Stories</span>
+        <a href="/stories"><span class="kicker mb-2">Stories</span></a>
         <h1 class="h1 c-blue0 normal mb-1"><?php the_title(); ?></h1>
         <div class="story-meta c-blueGrey0 ts-s tf-sans">
           <span class="story-author">by <?php echo get_field('story_author'); ?></span>

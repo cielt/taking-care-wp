@@ -1,7 +1,6 @@
 // =====================================
 //
 //   Base
-//   -> Tag-level defaults
 //
 // =====================================
 
@@ -91,6 +90,11 @@ h6, .h6 {
   font-weight: inherit;
   line-height: 1.2;
   margin-top: 0; // use tool class for other spacing attributes
+
+  & > a:link, & > a:active, & > a:visited {
+    border-bottom: none;
+    text-decoration: none;
+  }
 }
 
 // strip list style, spacing
