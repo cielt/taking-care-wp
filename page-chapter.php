@@ -34,7 +34,8 @@ get_header(); ?>
       <!-- Intro Story -->
       <div class="g-b g-b--1of1 g-b--m--6of12 mb-5 m--mb0">
         <div class="m--pa2">
-          <span class="date mb-2"><?php echo get_field('start_year') ?> &mdash; <?php echo get_field('end_year') ?></span>
+          <span class="date dib mb-1 mr-2"><?php echo get_field('start_year') ?> &mdash; <?php echo get_field('end_year') ?></span>
+          <span class="date upper dib mb-2"><b class="fa fa-map-marker" aria-hidden="true"></b> <?php echo the_field('chapter_location', $parent_id) ?></span>
           <?php the_title( '<h1 class="h2 c-blue0 normal mb-1">', '</h1>' ); ?>
           <?php the_content(); ?>
           </div>
@@ -64,7 +65,7 @@ get_header(); ?>
             <div class="gutter-sizer"></div>
             <?php
               $counter = 0;
-              while( have_rows('chapter_image_gallery') && $counter < 10): the_row(); 
+              while( have_rows('chapter_image_gallery') && $counter < 20): the_row(); 
 
               // vars
               $image = get_sub_field('slide_image');
@@ -72,12 +73,14 @@ get_header(); ?>
               $credit = get_sub_field('photo_credit');
             ?>
 
-            <?php if( $counter == 0 || $counter == 7): ?>
+            <?php if( $counter == 0 || $counter == 7 || $counter == 14): ?>
               <div class="grid-item grid-item--w2x">
             <?php else : ?> 
               <div class="grid-item">
             <?php endif; ?>
-              <img class="fit" src="<?php echo $image; ?>" alt="<?php echo $caption ?>" />                
+              <a href="<?php echo get_permalink($slideshow); ?>">
+                <img class="fit" src="<?php echo $image; ?>" alt="<?php echo $caption ?>" />
+              </a>
           <?php $counter++; ?>
         </div>
 
