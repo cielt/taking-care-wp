@@ -76,7 +76,8 @@ get_header(); ?>
           <h3 class="tile-title h3"><?php echo $chapter->post_title; ?></h3>
         </div>
       </a>    
-    <?php endforeach; ?>
+    <?php endforeach; 
+      wp_reset_postdata();?>
     </div>
     
   </div>  

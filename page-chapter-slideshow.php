@@ -67,9 +67,9 @@ get_header(); ?>
       <?php endif; ?>
     </div>
   </div>
-  <!-- ################################################## More Slideshows ################################################## -->
-  <div class="section more-slideshows">
-  </div> 
 <?php endwhile; // End of the loop. ?>
+
+<!-- STORIES FEED -->
+<?php get_template_part( 'template-parts/content', 'stories-feed' ); ?>
 
 <?php get_footer(); ?>

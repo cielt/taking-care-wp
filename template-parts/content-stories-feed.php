@@ -4,7 +4,7 @@
     'orderby' => 'date', 
     'order' => 'DESC',
     'post_type' => 'story',
-    'posts_per_page' => -1, 
+    'posts_per_page' => 10, 
     'paged' => $paged
     );
     //query_posts($args);
