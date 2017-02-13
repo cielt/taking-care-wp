@@ -2334,6 +2334,10 @@ a.button {
     font-weight: bold;
     font-size: 0.875em;
     line-height: 1.5; }
+    .milestone-years .milestone-meta .milestone-when .milestone-date {
+      display: inline-block;
+      text-align: right;
+      width: 1.5em; }
   .milestone-years .milestone-details {
     font-size: 0.875em;
     font-style: italic; }

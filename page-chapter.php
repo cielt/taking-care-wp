@@ -124,6 +124,7 @@ get_header(); ?>
                 while( have_rows('milestone_year_set')): the_row();
                 foreach($milestone_year_set as $milestone_item) : 
                   $milestone_date = get_sub_field('milestone_date');
+                  $milestone_month = get_sub_field('milestone_month');
                   $milestone_location = get_sub_field('milestone_location');
                   $milestone_summary = get_sub_field('milestone_summary'); ?>
                   <tr>
@@ -131,7 +132,7 @@ get_header(); ?>
                       <div class="g">
                         <div class="milestone-meta g-b g-b--1of1 g-b--xs--4of12">
                           <div class="g">
-                            <div class="milestone-date g-b g-b--1of1 g-b--s--5of12"><?php echo $milestone_date; ?></div>
+                            <div class="milestone-when g-b g-b--1of1 g-b--s--5of12"><b class="milestone-date mr-1"><?php echo $milestone_date; ?></b> <?php echo $milestone_month; ?></div>
                             <span class="milestone-location g-b g-b--1of1 g-b--s--7of12"><?php echo $milestone_location; ?></span>
                           </div>
                         </div>

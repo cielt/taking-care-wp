@@ -45,16 +45,25 @@
   width: 100%;
 }
 
-  // cells
-  .milestone-meta {
-    @extend .px-0;
-    color: $navy0;
-    font-weight: bold;
-    font-size: $b-fontSize-s;
-    line-height: 1.5;
-  }
+// cells
+.milestone-meta {
+  @extend .px-0;
+  color: $navy0;
+  font-weight: bold;
+  font-size: $b-fontSize-s;
+  line-height: 1.5;
 
-  .milestone-details {
+  // date
+  .milestone-when {
+    .milestone-date {
+      display: inline-block;
+      text-align: right;
+      width: em(24px);
+    }
+  }
+}
+
+.milestone-details {
     font-size: $b-fontSize-s;
     font-style: italic;
   }
