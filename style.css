@@ -478,6 +478,8 @@ address {
   border-bottom: 1px solid #e0e0e0; }
   .hairline.grey3 {
     border-color: #ccc; }
+  .hairline.dotted {
+    border-style: dotted; }
 
 a, a:active, a:visited {
   color: inherit;
@@ -2448,6 +2450,10 @@ a.button {
 @media (min-width: 59.9375em) {
   .m--dib {
     display: inline-block; } }
+
+@media (min-width: 59.9375em) {
+  .m--hide {
+    display: none; } }
 
 @media (min-width: 59.9375em) {
   .m--show {

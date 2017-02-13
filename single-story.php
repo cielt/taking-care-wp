@@ -44,13 +44,27 @@ get_header(); ?>
     </div>
     <hr class="hairline mt-4 mb-4">
     <!-- Footer Controls -->
-    <div class="story-footer pt-4 pb-4">
+    <?php $prev = get_previous_post(); $next = get_next_post(); ?>
+    <div class="story-footer pt-4 pb-4 tf-sans">
       <div class="g">
-        <div class="content-nav-prev g-b g-b--1of1 g-b--m--6of12 t-alignL">
-          <?php previous_post_link( '%link', __( '<b class="fa fa-chevron-left" aria-hidden="true"></b> %title') ); ?>
+        <div class="content-nav-prev g-b g-b--1of1 g-b--m--6of12 t-alignL <?php if (!$prev) { echo 'dn m--show'; } ?>">
+          <?php if ($prev) : ?>
+            <span class="db ts-xs upper c-blueGrey0 mb-2">Previous</span>
+            <?php previous_post_link( '%link', __( '<b class="fa fa-chevron-left" aria-hidden="true"></b> %title') ); ?>
+          <?php else : ?>
+            &nbsp;
+          <?php endif; ?>
         </div>
-        <div class="content-nav-next g-b g-b--1of1 g-b--m--6of12 t-alignR">
-          <?php next_post_link( '%link', __( ' %title <b class="fa fa-chevron-right" aria-hidden="true"></b>') ); ?>
+        <?php if ($prev) : ?>
+          <hr class="hairline g-b g-b--1of1 m--hide mt-4 mb-4 dotted">
+        <?php endif; ?>  
+        <div class="content-nav-next g-b g-b--1of1 g-b--m--6of12 t-alignR <?php if (!$next) { echo 'dn m--show'; } ?>">
+          <?php if ($next) : ?>
+            <span class="db ts-xs upper c-blueGrey0 mb-2">Next</span>
+            <?php next_post_link( '%link', __( ' %title <b class="fa fa-chevron-right" aria-hidden="true"></b>') ); ?>
+          <?php else : ?>
+            &nbsp;  
+          <?php endif; ?>
         </div>
       </div>
     </div>

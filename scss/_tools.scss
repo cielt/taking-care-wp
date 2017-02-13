@@ -37,6 +37,12 @@
   }
 }
 
+.m--hide {
+  @media (min-width: $g-m) {
+    display: none;
+  }
+}
+
 .m--show {
   @media (min-width: $g-m) {
     display: block;

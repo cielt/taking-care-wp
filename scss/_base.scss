@@ -186,6 +186,10 @@ address {
   &.grey3 {
     border-color: $grey3;
   }
+
+  &.dotted {
+    border-style: dotted;
+  }
 }
 
 // -------------------------------------
