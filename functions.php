@@ -202,6 +202,14 @@ function taking_care_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'taking_care_scripts' );
 
+
+// Replace the excerpt "[...]" text by ...
+function stories_feed_new_excerpt_more($more) {
+  global $post;
+	return ' <span class="vis-hidden">Read more </span> &hellip; ';
+}
+add_filter('excerpt_more', 'stories_feed_new_excerpt_more');
+
 /**
  * Implement the Custom Header feature.
  */

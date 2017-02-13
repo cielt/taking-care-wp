@@ -1952,6 +1952,8 @@ a.button {
   .story-item .story-excerpt {
     display: block;
     margin: 0; }
+    .story-item .story-excerpt p {
+      margin-bottom: 0; }
   @media (min-width: 48em) {
     .story-item {
       width: 47.5%;
@@ -1961,7 +1963,7 @@ a.button {
       .story-item .story-author {
         float: left; }
       .story-item .story-excerpt {
-        margin-left: 9.25em; } }
+        margin-left: 10em; } }
 
 .footer {
   position: relative;

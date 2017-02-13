@@ -606,6 +606,10 @@ $m--tileImgH: 300px;
   .story-excerpt {
     display: block;
     margin: 0;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   @media (min-width: $g-s) {
@@ -621,7 +625,7 @@ $m--tileImgH: 300px;
     }
 
     .story-excerpt {
-      margin-left: em(148px);      
+      margin-left: em(140px, 14px);      
     }
   }
 
