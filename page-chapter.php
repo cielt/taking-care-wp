@@ -132,7 +132,10 @@ get_header(); ?>
                       <div class="g">
                         <div class="milestone-meta g-b g-b--1of1 g-b--xs--4of12">
                           <div class="g">
-                            <div class="milestone-when g-b g-b--1of1 g-b--s--5of12"><b class="milestone-date mr-1"><?php echo $milestone_date; ?></b> <?php echo $milestone_month; ?></div>
+                            <div class="milestone-when g-b g-b--1of1 g-b--s--5of12">
+                              <b class="milestone-month mr-1"><?php echo $milestone_month; ?></b>
+                              <?php if (!empty($milestone_date)) { echo '<b class="milestone-date">' . $milestone_date . '</b>'; } ?></b>
+                            </div>
                             <span class="milestone-location g-b g-b--1of1 g-b--s--7of12"><?php echo $milestone_location; ?></span>
                           </div>
                         </div>

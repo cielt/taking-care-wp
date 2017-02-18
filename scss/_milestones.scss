@@ -55,10 +55,8 @@
 
   // date
   .milestone-when {
-    .milestone-date {
+    .milestone-month, .milestone-date {
       display: inline-block;
-      text-align: right;
-      width: em(24px);
     }
   }
 }
