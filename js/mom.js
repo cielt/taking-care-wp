@@ -6,8 +6,8 @@
   $(function () {
 
     var $body = $('body'),
-        bodyLayout = $body.data('layout'),
-        $globalMenuBtns = $('#global-menu-btn, #close-menu-btn, .menu-overlay'),
+    bodyLayout = $body.data('layout'),
+    $globalMenuBtns = $('#global-menu-btn, #close-menu-btn, .menu-overlay'),
         $heroEl, // main marquee el for Waypoint settings
         $marqueeMain = $('.marquee-main'),
         $marqueeRefreshBtn = $marqueeMain.find('.slide-refresh-btn'),
@@ -19,7 +19,7 @@
         $scrollDownArrow = $marqueeMain.find('.scroll-to-content-btn'),
         $siteNavBlock = $('.site-nav-block');
 
-    TakingCare.currSlideIndex = 0;
+        TakingCare.currSlideIndex = 0;
 
     // Global Nav Menu
     if ($globalMenuBtns.length) {
@@ -57,36 +57,39 @@
     // Waypoints: waypoint el depends on page
     switch (bodyLayout) {
       case 'tc-home': 
-        $heroEl = $('.marquee-main');
-        break;
+      $heroEl = $('.marquee-main');
+      break;
 
       case 'tc-chapter':
-        $heroEl = $('.cover-image-spacing');
-        break;
+      $heroEl = $('.cover-image-spacing');
+      break;
 
       case 'tc-slideshow':
-        $heroEl = $('.header-slideshow');
-        break;  
+      $heroEl = $('.header-slideshow');
+      break;  
 
       default:
-        $heroEl = $('.marquee-main');
-        break;
+      $heroEl = $('.marquee-main');
+      break;
     }
 
-    headerWaypoint = new Waypoint({
-      element: $heroEl,
-      handler: function (direction) {
-        if (direction === 'up') {
-          $body.removeClass('scroll-down');
-        } else {
-          $body.addClass('scroll-down');
+    if ($body.hasClass('header-waypoint')) {
+
+      headerWaypoint = new Waypoint({
+        element: $heroEl,
+        handler: function (direction) {
+          if (direction === 'up') {
+            $body.removeClass('scroll-down');
+          } else {
+            $body.addClass('scroll-down');
+          }
+        },
+        offset: function () {
+          var heroElHeight = this.element.outerHeight();
+          return -(heroElHeight -1);
         }
-      },
-      offset: function () {
-        var heroElHeight = this.element.outerHeight();
-        return -(heroElHeight -1);
-      }
-    });
+      });
+    }
   });
 
 })(jQuery);
