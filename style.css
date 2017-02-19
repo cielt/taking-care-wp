@@ -2176,11 +2176,13 @@ a.button {
   .slideshow .slideshow-controls {
     position: absolute;
     z-index: 2;
-    width: 4.5em;
+    width: 5em;
     top: 100%;
     left: 100%;
-    margin-top: -2em;
+    margin-top: -3em;
     margin-left: -4.5em; }
+    .slideshow .slideshow-controls .slideshow-arrows {
+      width: 4.5em; }
   .slideshow .slideshow-frame {
     position: relative;
     z-index: 1; }
@@ -2200,7 +2202,7 @@ a.button {
   left: 100%;
   margin-left: -5em;
   top: 100%;
-  margin-top: -4em; }
+  margin-top: -5em; }
 
 .slideshow-controls .slick-prev, .slideshow-controls .slick-next {
   position: relative;

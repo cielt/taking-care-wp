@@ -47,7 +47,7 @@ get_header(); ?>
             <div class="slideshow-slide g c-white" data-index="<?php echo $counter; ?>">
             <div class="g-b g-b--1of1 g-b--m--8of12 px-0 m--px1">
               <div class="slide-image-frame mb-4 m--mb0">
-                <img class="" data-lazy="<?php echo $image; ?>" alt="">
+                <img data-lazy="<?php echo $image; ?>" alt="">
               </div>    
             </div>
             <div class="g-b g-b--1of1 g-b--m--4of12 px-0 m--px1 flex-wrap-content-end">

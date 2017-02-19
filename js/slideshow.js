@@ -2,7 +2,9 @@
   'use strict';
 
   $(function () {
-    var $slideshowFrame = $('#slideshow-frame');
+    var $slideshowWrapper = $('#slideshow'),
+        $slideshowFrame = $('#slideshow-frame'),
+        $slideshowArrows = $('.slideshow-arrows');
 
     // update slide markers
     $slideshowFrame.on('init', function (slick) {
@@ -17,8 +19,8 @@
 
           $dotBtn.text(resetIndex + ' of ' + len);
         });
-      } 
-
+      }
+    
     });
 
     $slideshowFrame.slick({
@@ -31,9 +33,20 @@
       lazyLoad: 'ondemand',
       dots: true,
       appendDots: $('.slideshow-marker'),
-      adaptiveHeight: true
+      adaptiveHeight: true,
     });
 
+    // Keyup handlers
+    $(window).on('keyup', function (ev) {
+      // 37: < left | 39: right >
+      var keyIndex = ev.which;
+
+      if (keyIndex === 37) {
+        $slideshowFrame.slick('slickPrev');
+      } else if (keyIndex === 39) {
+        $slideshowFrame.slick('slickNext');
+      }
+    });
   });
 
 })(jQuery);
