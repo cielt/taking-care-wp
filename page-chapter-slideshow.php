@@ -14,7 +14,27 @@ get_header(); ?>
   $parents = get_post_ancestors( $post->ID );
   $parent_id = ($parents) ? $parents[0]: $post->ID;
   $parent_title = get_the_title( $parent_id ); 
-  $parent_permalink = get_permalink( $parent_id ); ?>
+  $parent_permalink = get_permalink( $parent_id ); 
+  $chapter_page_list = get_pages( array( 'meta_key' => 'page_template', 'meta_value' => 'chapter_page', 'sort_column' => 'menu_order', 'sort_order' => 'ASC' ) );
+  // get prev / next page indices
+  $chapter_pages = array();
+
+
+  foreach ($chapter_page_list as $chapter_page) {
+    $chapter_pages[] += $chapter_page->ID;
+  }
+
+  // zero-index counter
+  $current_chapter = array_search($parent_id, $chapter_pages);
+
+  if ($current_chapter > 0) {
+    $prevChapterID = $chapter_pages[$current_chapter-1];    
+  }
+  
+  if ($current_chapter < sizeof($chapter_pages)) {
+    $nextChapterID = $chapter_pages[$current_chapter+1];
+  }
+  ?>
 
   <div class="header-spacing"></div>
   <!-- ################################################## Slideshow ################################################## -->
@@ -65,6 +85,43 @@ get_header(); ?>
         </div>
       </div>    
       <?php endif; ?>
+      <hr class="hairline dotted blueGrey0 mt-5 mb-5">
+      <!-- Prev / Next Chapters -->
+      <div class="slideshow-footer tf-sans">
+      <div class="g">
+        <div class="content-nav-prev g-b g-b--1of1 g-b--m--6of12 t-alignL c-blueGrey0">
+          <?php if (isset($prevChapterID)) : ?>
+            <span class="db ts-xs upper c-blueGrey0 mb-2">Previous Chapter</span>
+            <a class="slideshow-footer-nav slideshow-prev-link" href="<?php echo get_permalink($prevChapterID); ?>">
+              <span class="db mb-2"><?php echo ($current_chapter) . '. ' . get_the_title($prevChapterID); ?></span>
+              <div class="link-thumbnail">
+                <div class="overlay"></div>
+                <img class="fit" src="<?php echo the_field('cover_image', $prevChapterID); ?>" alt="">
+              </div>
+            </a>  
+          <?php else: ?>
+            &nbsp;
+          <?php endif;?>  
+        </div>
+        <?php if (isset($prevChapterID)) : ?>
+          <hr class="hairline g-b g-b--1of1 m--hide mt-4 mb-4 dotted blueGrey0">
+        <?php endif; ?>
+        <div class="content-nav-next g-b g-b--1of1 g-b--m--6of12 t-alignR c-blueGrey0">
+          <?php if (isset($nextChapterID)) : ?>
+            <span class="db ts-xs upper c-blueGrey0 mb-2">Next Chapter</span>
+            <a class="slideshow-footer-nav slideshow-next-link" href="<?php echo get_permalink($nextChapterID); ?>">
+              <span class="db mb-2"><?php echo ($current_chapter + 2) . '. ' . get_the_title($nextChapterID); ?></span>
+              <div class="link-thumbnail">
+                <div class="overlay"></div>
+                <img class="fit" src="<?php echo the_field('cover_image', $nextChapterID); ?>" alt="">
+              </div>  
+            </a>
+          <?php else: ?>
+            &nbsp;
+          <?php endif; ?>      
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 <?php endwhile; // End of the loop. ?>
