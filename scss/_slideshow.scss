@@ -46,17 +46,31 @@ $slideshow-height: em(240px);
     width: em(80px);
     top: 100%;
     left: 100%;
-    margin-top: em(-48px);
+    margin-top: em(-16px);
     margin-left: em(-72px);
 
     .slideshow-arrows {
       width: em(72px);
     }
+
+    @media (min-width: $g-s) {
+      margin-top: em(-48px);
+    }
+
   }
 
   .slideshow-frame {
     position: relative;
     z-index: 1;
+    // hide until slick init
+    visibility: hidden;
+    @include opacity(0);
+
+    // then reveal
+    &.slick-initialized {
+      visibility: visible;
+      @include opacity(100);
+    }
   }
 
   @media (min-width: $g-m) {
@@ -77,7 +91,11 @@ $slideshow-height: em(240px);
   left: 100%;
   margin-left: em(-80px);
   top: 100%;
-  margin-top: em(-80px);
+  margin-top: em(-48px);
+
+  @media (min-width: $g-s) {
+    margin-top: em(-80px);
+  }
 }
 
 
@@ -226,7 +244,19 @@ $slideshow-height: em(240px);
   }
 }
 
-// ----- Slideshow Footer ----- //
+// ----- Slideshow Footer :: Navigation ----- //
+a.back-to-link {
+  color: $blueGrey0;
+  font-family: $b-sans-fontFamily;
+  font-size: $b-fontSize-xs;
+  text-transform: uppercase;
+  border: none;
+
+  &:hover, &:focus {
+    color: $blue0;
+  }
+}
+
 
 .slideshow-footer {
   .slideshow-footer-nav {
@@ -247,6 +277,7 @@ $slideshow-height: em(240px);
     display: inline-block;
     width: em(96px);
     height: em(54px);
+    border-radius: $b-borderRad-1;
     overflow: hidden;
     border: $b-borderWidth-xs solid $black;
 
@@ -271,7 +302,7 @@ $slideshow-height: em(240px);
   }
 
   .slideshow-footer-nav:hover, .slideshow-footer-nav:focus {
-    color: $blueGrey1;
+    color: $blue0;
 
     .link-thumbnail {
       border-color: $blueGrey0;

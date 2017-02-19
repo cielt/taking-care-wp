@@ -54,6 +54,11 @@ get_header(); ?>
         <div id="slideshow-controls" class="slideshow-controls">
           <div class="slideshow-arrows cf"></div>
         </div>
+        <div class="loading-msg">
+          <p>Loading &hellip;</p>
+          <span class="vis-hidden">Loading Slideshow</span>
+        </div>
+        <!-- hidden till slick init -->
         <div id="slideshow-frame" class="slideshow-frame">
           <?php
               $counter = 0;
@@ -72,11 +77,12 @@ get_header(); ?>
             </div>
             <div class="g-b g-b--1of1 g-b--m--4of12 px-0 m--px1 flex-wrap-content-end">
               <div class="slide-info m--pl2 flex-item-content-end t-alignL">
-                <p class="slide-caption mb-2"><?php echo $caption; ?></p>
-                <?php if (isset($credit)) {
+                <div class="slide-caption mb-2"><?php echo $caption; ?></div>
+                <?php if (!empty($credit)) {
                   echo '<p class="slide-meta-info ts-s tf-sans c-grey5 lh-reset light">' . $credit . '</p>';    
                 } ?>
-              </div> 
+                <a class="back-to-link" href="<?php echo $parent_permalink; ?>">Back to: <?php echo $parent_title; ?></a>
+              </div>
               <div class="controls-spacer flex-item-content-end dn m--show"></div>
             </div>
           </div>

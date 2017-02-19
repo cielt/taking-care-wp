@@ -2181,13 +2181,27 @@ a.button {
     width: 5em;
     top: 100%;
     left: 100%;
-    margin-top: -3em;
+    margin-top: -1em;
     margin-left: -4.5em; }
     .slideshow .slideshow-controls .slideshow-arrows {
       width: 4.5em; }
+    @media (min-width: 48em) {
+      .slideshow .slideshow-controls {
+        margin-top: -3em; } }
   .slideshow .slideshow-frame {
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+    visibility: hidden;
+    filter: alpha(opacity=0);
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0; }
+    .slideshow .slideshow-frame.slick-initialized {
+      visibility: visible;
+      filter: alpha(opacity=100);
+      -webkit-opacity: 1;
+      -moz-opacity: 1;
+      opacity: 1; }
   @media (min-width: 59.9375em) {
     .slideshow {
       padding-bottom: 0; } }
@@ -2204,7 +2218,10 @@ a.button {
   left: 100%;
   margin-left: -5em;
   top: 100%;
-  margin-top: -5em; }
+  margin-top: -3em; }
+  @media (min-width: 48em) {
+    .slideshow-marker {
+      margin-top: -5em; } }
 
 .slideshow-controls .slick-prev, .slideshow-controls .slick-next {
   position: relative;
@@ -2313,6 +2330,15 @@ a.button {
   font-size: 1.125em;
   color: #ccc; }
 
+a.back-to-link {
+  color: #91A1B3;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  border: none; }
+  a.back-to-link:hover, a.back-to-link:focus {
+    color: #4A90E2; }
+
 .slideshow-footer .slideshow-footer-nav {
   display: inline-block;
   border: none; }
@@ -2325,6 +2351,7 @@ a.button {
   display: inline-block;
   width: 6em;
   height: 3.375em;
+  border-radius: 3px;
   overflow: hidden;
   border: 1px solid #000; }
   .slideshow-footer .link-thumbnail img.fit {
@@ -2346,9 +2373,9 @@ a.button {
     opacity: 0.48;
     transition: all 300ms ease; }
 .slideshow-footer .slideshow-footer-nav:hover, .slideshow-footer .slideshow-footer-nav:focus {
-  color: #E5EAF0; }
+  color: #4A90E2; }
   .slideshow-footer .slideshow-footer-nav:hover .link-thumbnail, .slideshow-footer .slideshow-footer-nav:focus .link-thumbnail {
-    border-color: #E5EAF0; }
+    border-color: #91A1B3; }
     .slideshow-footer .slideshow-footer-nav:hover .link-thumbnail .overlay, .slideshow-footer .slideshow-footer-nav:focus .link-thumbnail .overlay {
       filter: alpha(opacity=0);
       -webkit-opacity: 0;
