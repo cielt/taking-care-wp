@@ -19,6 +19,7 @@
 <link rel="icon" href="<?php echo get_template_directory_uri() ?>/images/favicon.ico" type="image/x-icon" />
 
 <?php wp_head(); ?>
+<?php include_once('analytics-tracking.php') ?>
 </head>
 <body <?php if (is_page_template('page-chapter-slideshow.php') || is_page_template('page-stories.php')) { body_class('nav-closed theme-dark header-waypoint'); } else if (is_single()) { body_class('nav-closed scroll-down'); } else { body_class('nav-closed header-waypoint'); }  ?> 
   data-layout="<?php if (is_page_template('page-chapter-slideshow.php')) { echo 'tc-slideshow'; } else if (is_page_template('page-chapter.php')) { echo 'tc-chapter'; } else if (is_page_template('front-page.php')) { echo 'tc-home'; }  ?>">
