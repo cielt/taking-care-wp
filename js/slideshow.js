@@ -4,16 +4,23 @@
   $(function () {
     var $slideshowWrapper = $('#slideshow'),
     $slideshowFrame = $('#slideshow-frame'),
+    $slides = $slideshowFrame.find('.slideshow-slide'),
     $slideshowArrows = $('.slideshow-arrows'),
     startAtSlide = getUrlParameter('start_slide') || 0, // start slide counter at 1
-    // after first slide image loaded, init carousel
-    $slideshowFirstSlide = $slideshowFrame.find('.slideshow-slide .slide-image-frame').eq(startAtSlide),
-    $firstSlideImg = $slideshowFirstSlide.find('img'),
-    firstImgSrc = $firstSlideImg.data('lazy'),
+    $slideshowFirstSlide,
+    $firstSlideImg,
+    firstImgSrc,
     slideshowWidth,
     imgPoll,
     scaleFactor,
     firstSlideHeight;
+
+    // after first slide image loaded, init carousel
+    // ensure that index is in bounds
+    if (startAtSlide >= $slides.length) { startAtSlide = 0; }
+    $slideshowFirstSlide = $slideshowFrame.find('.slideshow-slide .slide-image-frame').eq(startAtSlide);
+    $firstSlideImg = $slideshowFirstSlide.find('img');
+    firstImgSrc = $firstSlideImg.data('lazy');
 
     // update slide markers
     $slideshowFrame.on('init', function (ev, carousel) {
@@ -33,7 +40,6 @@
           $dotBtn.text(resetIndex + ' of ' + len);
         });
       }
-
       // go to startAtSlide
       carousel.slickGoTo(startAtSlide);
 
@@ -63,7 +69,7 @@
         scaleFactor = slideshowWidth / $firstSlideImg.get(0).naturalWidth;
         firstSlideHeight = scaleFactor * $firstSlideImg.get(0).naturalHeight;
 
-        $slideshowFirstSlide.css({ 'height': firstSlideHeight });  
+        $slideshowFirstSlide.css({ 'height': firstSlideHeight }); 
         // init slick carousel
         $slideshowFrame.slick({
           accessibility: true,
