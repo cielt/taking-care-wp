@@ -69,6 +69,8 @@ $slideshow-height: em(240px);
   .slideshow-frame {
     position: relative;
     z-index: 1;
+    transition: all 300ms ease;
+
     // hide until slick init
     visibility: hidden;
     @include opacity(0);
@@ -286,7 +288,6 @@ a.back-to-link {
     height: em(54px);
     border-radius: $b-borderRad-1;
     overflow: hidden;
-    border: $b-borderWidth-xs solid $black;
 
     img.fit {
       display: block;
@@ -298,7 +299,7 @@ a.back-to-link {
       display: block;
       position: absolute;
       z-index: 2;
-      width: 100%;
+      width: em(98px);
       height: em(56px);
       top: 0;
       left: 0;
@@ -312,7 +313,6 @@ a.back-to-link {
     color: $blue0;
 
     .link-thumbnail {
-      border-color: $blueGrey0;
 
       .overlay {
         @include opacity(0);
