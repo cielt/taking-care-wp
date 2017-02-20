@@ -2172,6 +2172,10 @@ a.button {
   font-family: "Helvetica Neue", sans-serif;
   color: #bebebe; }
 
+.loading-msg {
+  max-width: 16.25em;
+  margin: 0 auto; }
+
 .slideshow {
   position: relative;
   padding-bottom: 3em; }

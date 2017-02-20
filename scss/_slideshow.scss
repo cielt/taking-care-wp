@@ -34,6 +34,13 @@ $slideshow-height: em(240px);
   color: $grey4;
 }
 
+// ----- Loading ... ----- //
+
+.loading-msg {
+  max-width: em(260px);
+  margin: 0 auto;
+}
+
 // ----- Slideshow Controls ----- //
 
 .slideshow {

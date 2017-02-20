@@ -49,14 +49,15 @@ get_header(); ?>
       </div>
       <?php if( have_rows('chapter_image_gallery', $parent_id) ): ?>
       <div id="slideshow" class="slideshow">
+        <!-- loading -->
+        <div class="loading-msg pt-2 pb-6 t-alignC">
+          <div class="px-6 mb-6"><img class="fit" src="<?php echo get_template_directory_uri() ?>/images/flying-swallow.gif" alt=""></div>
+          <p class="c-grey5 upper tf-sans">Loading &hellip;</p>
+        </div>
         <!-- markers, controls -->
         <div class="slideshow-marker"></div>
         <div id="slideshow-controls" class="slideshow-controls">
           <div class="slideshow-arrows cf"></div>
-        </div>
-        <div class="loading-msg">
-          <p>Loading &hellip;</p>
-          <span class="vis-hidden">Loading Slideshow</span>
         </div>
         <!-- hidden till slick init -->
         <div id="slideshow-frame" class="slideshow-frame">
