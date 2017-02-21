@@ -17,7 +17,9 @@
       <h4 class="h4 c-grey3 tf-sans upper bold mb-4">About This Site</h4>
       <div class="g mb-6">
         <div class="g-b g-b--1of1 g-b--m--6of12 px-0">
-          <p class="preview c-grey4">Aenean aliquam odio quam, in bibendum lorem pulvinar quis. Etiam velit mi, tempor a metus egestas, pretium tempor quam. Quisque sodales ligula libero, ac egestas arcu molestie ac. Curabitur non lacus et enim pellentesque aliquam. Praesent porttitor enim dignissim erat interdum, maximus ornare felis tempus.</p>
+          <p class="preview c-grey4">
+            <em>Taking Care</em> is a website celebrating the life of Yen-Sheng Loretta Tu (1948 &ndash; 2016), created by her family in loving remembrance.  For more information, to submit a request, or to share a story you may have, please get in touch.
+          </p>
         </div>
         <div class="g-b g-b--1of1 g-b--m--1of12">&nbsp;</div>
         <div class="g-b g-b--1of1 g-b--m--2of12 px-0">

@@ -18,7 +18,7 @@
       </div>
       <div class="section-actions g-b g-b--1of1 g-b--m--4of12 px-0 m--t-alignR">
         <!-- TODO: add fa icon -->
-        <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Stories' ) ) ); ?>" class="section-heading-cta">Read Stories <b class="fa fa-bookmark dib" aria-hidden="true"></b></a>
+        <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Stories' ) ) ); ?>" class="section-heading-cta">Read Stories <b class="fa fa-book dib" aria-hidden="true"></b></a>
         <span class="h-divider">|</span>
         <a href="#" class="section-heading-cta">Share a Story <b class="fa fa-comment dib" aria-hidden="true"></b></a>
       </div>
