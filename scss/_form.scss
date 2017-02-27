@@ -1,0 +1,115 @@
+// =====================================
+//
+//   Forms
+//
+// =====================================
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+// ol
+
+.form-list {
+  @extend .list-reset;
+  font-family: $b-sans-fontFamily;
+
+  // list items
+  & > li {
+    margin-bottom: $b-space-4;
+  }
+
+
+  input[type=text], input[type=email], textarea {
+    border: $b-borderWidth-xs solid $grey2;
+    padding: $b-space-1;
+    width: 100%;
+
+    &:focus {
+      outline: 0;
+      border-color: $blue0;
+      background-color: $blueGrey1;
+    }
+  }
+
+  label {
+    font-weight: bold;
+    color: $grey5;
+    display: block;
+    margin-bottom: $b-space-1;
+  }
+}
+
+
+form.wpcf7-form {
+  font-family: $b-sans-fontFamily;    
+
+  // Error feedback
+  
+  span[role=alert], div[role=alert] {
+    font-size: $b-fontSize-s;
+  }
+
+  // required
+  // input inline error
+  .required-mark, .wpcf7-not-valid-tip {
+    color: $red0;
+    margin-top: $b-space-1;
+  }
+
+  // form feedback
+  // yellow border message
+  .wpcf7-validation-errors {
+    margin: $b-space-5 0;
+    border-color: $yellow0;
+  }
+
+  // submit
+  input[type=submit] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: none;
+    transition: background-color 300ms ease;
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    display: inline-block;
+    padding: 0 $b-space-5;
+    min-width: em(80px);
+    background-color: $blueGrey0;
+    color: $white;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    line-height: em(40px);
+    border-radius: $b-borderRad-1;
+    overflow: hidden;
+
+    &:hover, &:focus {
+      background-color: $blue0;
+    }  
+  }
+
+  .ajax-loader {
+    position: absolute;
+    // width: 16px;
+    // height: 16px;
+    margin: 0 auto;
+    left: 50%;
+    top: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+  }
+
+}
