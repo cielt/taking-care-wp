@@ -214,18 +214,21 @@ a:hover {
 }
 
 .section a {
-  color: $blue0;
+  color: $navy0;
+
+  &:hover, &:focus {
+    color: $blue0;
+  }
 }
 
 .footer-content a {
   color: $grey3;
   font-family: $b-sans-fontFamily;
-  font-weight: 700;
   border-color: $blueGrey0;
 
   &:hover, &:focus {
     color: $grey0;
-    border-color: $grey0;
+    border-color: $blue0;
   }
 }
 

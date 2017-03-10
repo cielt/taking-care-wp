@@ -495,16 +495,17 @@ a:hover {
   border-color: #91A1B3; }
 
 .section a {
-  color: #4A90E2; }
+  color: #585c6b; }
+  .section a:hover, .section a:focus {
+    color: #4A90E2; }
 
 .footer-content a {
   color: #ccc;
   font-family: "Helvetica Neue", sans-serif;
-  font-weight: 700;
   border-color: #91A1B3; }
   .footer-content a:hover, .footer-content a:focus {
     color: #fafafa;
-    border-color: #fafafa; }
+    border-color: #4A90E2; }
 
 button {
   -webkit-appearance: none;
@@ -2734,6 +2735,9 @@ a.back-to-link {
 
 .c-blueGrey0 {
   color: #91A1B3; }
+
+.c-navy0 {
+  color: #585c6b; }
 
 em, .italic {
   font-style: italic; }

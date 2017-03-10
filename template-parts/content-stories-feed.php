@@ -35,8 +35,8 @@
               </div>
             </div>
             <div class="story-excerpt pa-2 m--pa4 ts-s">
-              <h3 class="h3 tf-sans story-title mb-1 bold"><a href="<?php echo get_permalink( $post->ID ); ?>"><?php the_title(); ?></a></h3>
-              <span class="author-name db tf-sans mb-1 bold">by <?php echo get_field('story_author'); ?></span>
+              <h3 class="h4 tf-sans story-title mb-1 bold"><a class="c-navy0" href="<?php echo get_permalink( $post->ID ); ?>"><?php the_title(); ?></a></h3>
+              <span class="author-name db tf-sans mb-1 c-blueGrey0">by <?php echo get_field('story_author'); ?></span>
               <?php the_excerpt(); ?>
             </div>
           </div>
