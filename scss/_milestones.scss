@@ -20,10 +20,10 @@
     text-align: left;
 
     &.year-marker {
-      font-size: $b-fontSize-xl;
+      font-size: $b-fontSize-l;
       color: $blueGrey0;
       font-style: italic;
-      line-height: 2;
+      line-height: 2.5;
       padding: 0 em(20px, 24px) em(20px, 24px) 0;
       width: em(72px, 24px);
       border-right: $b-borderWidth-xs solid $grey3;

@@ -2448,10 +2448,10 @@ a.back-to-link {
     vertical-align: top;
     text-align: left; }
     .milestone-years td.year-marker {
-      font-size: 1.5em;
+      font-size: 1.125em;
       color: #91A1B3;
       font-style: italic;
-      line-height: 2;
+      line-height: 2.5;
       padding: 0 0.83333em 0.83333em 0;
       width: 3em;
       border-right: 1px solid #ccc; }
