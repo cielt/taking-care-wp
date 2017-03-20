@@ -17,7 +17,10 @@ get_header(); ?>
       <!-- Center title block -->
       <div class="w-max max-gm mx-auto px-6">
         <h1 class="h1 m--ts-xxxl c-white mb-1">Stories</h1>
-        <p class="ts-l db c-blueGrey0 tf-serif">Fusce id lacus tortor. Maecenas ut ligula lorem. Cras sit amet mi aliquam, efficitur felis scelerisque, iaculis diam. Nulla placerat ligula pharetra, egestas erat in, consectetur nunc.</p>
+        <p class="ts-xs xs--ts-l db c-blueGrey0 tf-serif">
+          Yen-Sheng remembered people with effortless sensitivity, and took great pleasure in sharing tales with friends and family.  
+          Here, we pay tribute to the fond storyteller in our own words.  
+        </p>
       </div>
     </div>
     <a href="#chapter-intro" class="scroll-to-content-btn c-white" data-offset="0">
@@ -31,11 +34,15 @@ get_header(); ?>
     <div class="w-max max-gl mx-auto px-5 pt-6 pb-6"> 
       <!-- Stories - masonry tiles -->
       <div class="m--pa2">
-        <div class="section-header g mb-4">
-          <div class="g-b g-b--1of1 px-0">
+        <div class="section-header cf g">
+          <div class="g-b g-b--1of1 g-b--m--8of12 px-0">
             <h2 class="ts-l c-blueGrey0 mb-1 m--mb0 tf-sans upper section-title">Stories</h2>
           </div>
+          <div class="section-actions g-b g-b--1of1 g-b--m--4of12 px-0 m--t-alignR">
+            <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Share a Story' ))); ?>" class="section-heading-cta">Share a Story <b class="fa fa-comment dib" aria-hidden="true"></b></a>
+          </div>
         </div>
+        <hr class="hairline mt-2 mb-4">
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args= array(

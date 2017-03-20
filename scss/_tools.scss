@@ -265,6 +265,12 @@
   }
 }
 
+.xs--ts-l {
+  @media (min-width: $g-xs) {
+    font-size: $b-fontSize-l;
+  }
+}
+
 
 // ----- Color ----- //
 

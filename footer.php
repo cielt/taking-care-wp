@@ -18,7 +18,7 @@
       <div class="g mb-6">
         <div class="g-b g-b--1of1 g-b--m--6of12 px-0">
           <p class="preview c-grey4">
-            <em>Taking Care</em> is a website celebrating the life of Yen-Sheng Loretta Tu (1948 &ndash; 2016), created by her family in loving tribute.  For more information, to submit a request, or to share a story you may have, please get in touch via the <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact Us' ))); ?>">contact</a> or <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Share a Story' ))); ?>">share a story</a> forms.
+            <em>Taking Care</em> is a website celebrating the life of Yen-Sheng Loretta Tu (1948 &ndash; 2016), created by her family.  For more information, to submit a request, or to share a story you may have, please get in touch via the <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact Us' ))); ?>">contact</a> or <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Share a Story' ))); ?>">share a story</a> forms.
           </p>
         </div>
         <div class="g-b g-b--1of1 g-b--m--1of12">&nbsp;</div>

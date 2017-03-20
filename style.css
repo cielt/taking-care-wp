@@ -2717,6 +2717,10 @@ a.back-to-link {
   .m--ts-xxxl {
     font-size: 3.5em; } }
 
+@media (min-width: 30em) {
+  .xs--ts-l {
+    font-size: 1.125em; } }
+
 .c-white, .footer-content {
   color: #fff !important; }
 

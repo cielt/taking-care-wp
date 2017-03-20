@@ -17,7 +17,6 @@
         <h2 class="ts-l c-blueGrey0 mb-1 m--mb0 tf-sans upper section-title">Stories</h2>
       </div>
       <div class="section-actions g-b g-b--1of1 g-b--m--4of12 px-0 m--t-alignR">
-        <!-- TODO: add fa icon -->
         <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Stories' ) ) ); ?>" class="section-heading-cta">Read Stories <b class="fa fa-book dib" aria-hidden="true"></b></a>
         <span class="h-divider">|</span>
         <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Share a Story' ))); ?>" class="section-heading-cta">Share a Story <b class="fa fa-comment dib" aria-hidden="true"></b></a>
