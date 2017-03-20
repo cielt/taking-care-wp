@@ -253,11 +253,11 @@ $g-xxs: em(380px);
 
 // Stories :: Single Story
 .story-content {
-  p:first-child {
+  p:first-child::first-line {
     font-size: $b-fontSize-l;
   }
 
-  p:first-child:first-letter {
+  p:first-child::first-letter {
     color: $blueGrey0;
     float: left;
     font-size: em(72px, 18px);
@@ -268,11 +268,11 @@ $g-xxs: em(380px);
   }
 
   @media (min-width: $g-s) {
-    p:first-child {
+    p:first-child::first-line {
       font-size: $b-fontSize-xl;
     }
 
-    p:first-child:first-letter {
+    p:first-child::first-letter {
       font-size: em(72px, 24px);
       padding-top: em(16px, 72px);
     }

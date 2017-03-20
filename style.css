@@ -2199,9 +2199,9 @@ form.wpcf7-form {
   .story-block:hover .story-block-info .preview-block, .story-block:focus .story-block-info .preview-block {
     display: block; }
 
-.story-content p:first-child {
+.story-content p:first-child::first-line {
   font-size: 1.125em; }
-.story-content p:first-child:first-letter {
+.story-content p:first-child::first-letter {
   color: #91A1B3;
   float: left;
   font-size: 4em;
@@ -2210,9 +2210,9 @@ form.wpcf7-form {
   padding-right: 0.11111em;
   padding-left: 0; }
 @media (min-width: 48em) {
-  .story-content p:first-child {
+  .story-content p:first-child::first-line {
     font-size: 1.5em; }
-  .story-content p:first-child:first-letter {
+  .story-content p:first-child::first-letter {
     font-size: 3em;
     padding-top: 0.22222em; } }
 
