@@ -110,7 +110,7 @@ $imgTileSize-1x: em(120px, 14px);
 // ------ MASONRY ------ //
 
 .masonry-grid {
-  
+
   // double gutter
   .grid-item, .grid-sizer {
     width: 22%;
@@ -253,11 +253,11 @@ $g-xxs: em(380px);
 
 // Stories :: Single Story
 .story-content {
-  p:first-child::first-line {
+  & > p:first-child::first-line {
     font-size: $b-fontSize-l;
   }
 
-  p:first-child::first-letter {
+  & > p:first-child::first-letter {
     color: $blueGrey0;
     float: left;
     font-size: em(72px, 18px);
@@ -268,13 +268,40 @@ $g-xxs: em(380px);
   }
 
   @media (min-width: $g-s) {
-    p:first-child::first-line {
+    & > p:first-child::first-line {
       font-size: $b-fontSize-xl;
     }
 
-    p:first-child::first-letter {
+    & > p:first-child::first-letter {
       font-size: em(72px, 24px);
       padding-top: em(16px, 72px);
     }
   }
+
+  // Blockquote
+  .blockquote {
+    border-left: 10px solid $grey2;
+    margin: 0 auto em(64px);
+    padding: em(8px) em(32px);
+    quotes: '\201C''\201D''\2018''\2019';
+
+    &:before {
+      color: $grey2;
+      content: '\201C';
+      font-size: 3.6em;
+      line-height: 0.1em;
+      margin-right: 0.25em;
+      vertical-align: -0.4em;
+      font-style: normal;
+    }
+
+    & > p {
+      display: inline;
+      font-size: $b-fontSize-l;
+      font-style: italic;
+    }
+  }
+
+
+
 }

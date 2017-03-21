@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -2199,9 +2200,9 @@ form.wpcf7-form {
   .story-block:hover .story-block-info .preview-block, .story-block:focus .story-block-info .preview-block {
     display: block; }
 
-.story-content p:first-child::first-line {
+.story-content > p:first-child::first-line {
   font-size: 1.125em; }
-.story-content p:first-child::first-letter {
+.story-content > p:first-child::first-letter {
   color: #91A1B3;
   float: left;
   font-size: 4em;
@@ -2210,11 +2211,28 @@ form.wpcf7-form {
   padding-right: 0.11111em;
   padding-left: 0; }
 @media (min-width: 48em) {
-  .story-content p:first-child::first-line {
+  .story-content > p:first-child::first-line {
     font-size: 1.5em; }
-  .story-content p:first-child::first-letter {
+  .story-content > p:first-child::first-letter {
     font-size: 3em;
     padding-top: 0.22222em; } }
+.story-content .blockquote {
+  border-left: 10px solid #e0e0e0;
+  margin: 0 auto 4em;
+  padding: 0.5em 2em;
+  quotes: "“" "”" "‘" "’"; }
+  .story-content .blockquote:before {
+    color: #e0e0e0;
+    content: '\201C';
+    font-size: 3.6em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+    font-style: normal; }
+  .story-content .blockquote > p {
+    display: inline;
+    font-size: 1.125em;
+    font-style: italic; }
 
 @media (min-width: 59.9375em) {
   .v-divider:after {
