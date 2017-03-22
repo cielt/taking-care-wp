@@ -61,9 +61,15 @@ get_header(); ?>
           <div class="gutter-sizer"></div>
           <?php while ( $stories_query->have_posts() ) : $stories_query->the_post(); ?>
           <div class="grid-item">
+            <?php $story_image = get_field( 'story_image' );
+                if ($story_image) {
+                    $size = 'medium';
+                    $med_thumb_image = $story_image['sizes'][$size];
+                    $alt = $story_image['alt'];
+                    } ?>
             <a class="story-block" href="<?php echo get_permalink( $post->ID ); ?>"> 
               <!-- TODO: fix rendering of caption markup as ALT text -->
-              <img class="fit" src="<?php echo get_field( 'story_image' ); ?>" alt="">
+              <img class="fit" src="<?php echo $med_thumb_image; ?>" alt="<?php echo $alt; ?>">
               <div class="story-block-info">
                 <div class="story-block-overlay"></div>
                 <div class="story-block-label">

@@ -584,10 +584,12 @@ $m--tileImgH: 300px;
 
     .author-tn.tn-round {
       @extend .mx-auto;
+      display: block;
       width: em(128px);
       height: em(128px);
       border-radius: 50%;  
       overflow: hidden;
+      border: none;
     }
 
     .author-name {

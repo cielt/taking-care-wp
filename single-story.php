@@ -9,10 +9,15 @@
 
 get_header(); ?>
 
-
 <?php while ( have_posts() ) : the_post(); 
   $post_date = get_the_date( 'F j, Y' ); 
   $story_image = get_field('story_image');
+  if ($story_image) {
+    $size = 'large';
+    $large_image = $story_image['sizes'][$size];
+    $alt = $story_image['alt'];
+  }
+
   $story_image_caption = get_field('story_image_caption'); ?>
   <!-- ################################################## Story ################################################## -->
   <div class="p-rel z2"> 
@@ -31,7 +36,7 @@ get_header(); ?>
       <?php if (isset($story_image)) : ?>
       <div class="section-content mb-4 m--px6">
         <div class="image-frame mb-1">
-          <img class="fit" src="<?php echo get_field('story_image'); ?>" alt="">
+          <img class="fit" src="<?php echo $large_image; ?>" alt="<?php echo $alt; ?>">
         </div>
         <?php if (isset($story_image_caption)) : ?>
           <p class="image-caption ts-s tf-sans c-grey5"><?php echo get_field('story_image_caption'); ?></p>

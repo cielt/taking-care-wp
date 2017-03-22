@@ -2005,10 +2005,12 @@ form.wpcf7-form {
     margin: 0 auto 0.625em;
     text-align: center; }
     .story-item .story-author .author-tn.tn-round {
+      display: block;
       width: 8em;
       height: 8em;
       border-radius: 50%;
-      overflow: hidden; }
+      overflow: hidden;
+      border: none; }
     .story-item .story-author .author-name {
       font-family: "Helvetica Neue", sans-serif;
       font-weight: 700; }

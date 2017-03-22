@@ -29,9 +29,15 @@
         <li class="story-item">
           <div class="cf">
             <div class="story-author mb-2 m--mb0">
-              <div class="author-tn tn-round mb-2">
-                <a href="<?php echo get_permalink( $post->ID ); ?>"><img class="fit-h" src="<?php echo get_field( 'story_image' ); ?>" alt=""></a>
-              </div>
+              <?php $story_image = get_field( 'story_image' );
+                if ($story_image) {
+                    $size = 'thumbnail';
+                    $thumb_image = $story_image['sizes'][$size];
+                    $alt = $story_image['alt'];
+                    } ?>
+              <a class="author-tn tn-round mb-2" href="<?php echo get_permalink( $post->ID ); ?>">
+                <img class="fit-h" src="<?php echo $thumb_image; ?>" alt="<?php echo $alt; ?>">
+              </a>
             </div>
             <div class="story-excerpt pa-2 m--pa4 ts-s">
               <h3 class="h4 tf-sans story-title mb-1 bold"><a class="c-navy0" href="<?php echo get_permalink( $post->ID ); ?>"><?php the_title(); ?></a></h3>
