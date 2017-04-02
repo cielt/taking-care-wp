@@ -17,7 +17,8 @@
         homeSlidesArr = [],
         headerWaypoint,
         $scrollDownArrow = $marqueeMain.find('.scroll-to-content-btn'),
-        $siteNavBlock = $('.site-nav-block');
+        $siteNavBlock = $('.site-nav-block'),
+        $siteNavMenu = $('.site-nav-menu');
 
         TakingCare.currSlideIndex = 0;
 
@@ -27,6 +28,13 @@
         ev.preventDefault();
         $body.toggleClass('nav-open nav-closed');
         $siteNavBlock.scrollTop(0);
+      });
+    }
+
+    // Global Nav Links
+    if ($siteNavMenu.find('.page_item > a').length) {
+      $siteNavMenu.on('click', '.page_item a', function() {
+        $body.removeClass('nav-open').addClass('.nav-closed');
       });
     }
 
