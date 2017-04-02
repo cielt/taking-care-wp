@@ -105,7 +105,7 @@
       chapterWaypoint = new Waypoint({
         element: $('#chapter-intro'),
         handler: function(direction) {
-          var $marqueeFrame = $('.theme-image-bg');
+          var $marqueeFrame = $('.hero-area');
 
           if (direction === 'up') {
             $marqueeFrame.removeClass('blur-hero');

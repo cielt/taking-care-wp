@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <div class="cover-image-spacing"></div>
-<div class="theme-image-bg">
+<div class="hero-area">
   <div class="marquee-main chapter-cover w-max mx-auto p-rel">
     <div class="cover-image-overlay hero-overlay"></div>
     <div class="cover-image-title">

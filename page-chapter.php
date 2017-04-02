@@ -13,7 +13,7 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
 <div class="cover-image-spacing"></div>
-<div class="theme-image-bg">
+<div class="hero-area">
   <div class="marquee-main chapter-cover w-max mx-auto p-rel">
     <div class="hero-image-layer">
       <div class="vis-hidden cover-img-src" data-img-src="<?php echo get_field('cover_image') ?>"></div>

@@ -2100,7 +2100,7 @@ form.wpcf7-form {
     .cover-image-spacing {
       height: 100vh; } }
 
-.theme-image-bg {
+.hero-area {
   width: 100%;
   height: 40vh;
   position: fixed;
@@ -2108,12 +2108,12 @@ form.wpcf7-form {
   z-index: 2;
   background-color: #000; }
   @media (min-width: 30em) {
-    .theme-image-bg {
+    .hero-area {
       height: 60vh; } }
   @media (min-width: 59.9375em) {
-    .theme-image-bg {
+    .hero-area {
       height: 100vh; } }
-  .theme-image-bg .hero-image-layer {
+  .hero-area .hero-image-layer {
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -2121,7 +2121,7 @@ form.wpcf7-form {
     left: 0;
     background-image: none;
     background-size: cover; }
-  .theme-image-bg .chapter-cover {
+  .hero-area .chapter-cover {
     z-index: 2; }
 
 @media (min-width: 30em) {
@@ -2521,16 +2521,16 @@ a.back-to-link {
   -moz-opacity: 0.24;
   opacity: 0.24; }
 
-.theme-image-bg .hero-overlay {
+.hero-area .hero-overlay {
   transition: 1s opacity ease; }
-.theme-image-bg .hero-image-layer {
+.hero-area .hero-image-layer {
   transition: 1s filter ease; }
-.theme-image-bg.blur-hero .hero-overlay {
+.hero-area.blur-hero .hero-overlay {
   filter: alpha(opacity=72);
   -webkit-opacity: 0.72;
   -moz-opacity: 0.72;
   opacity: 0.72; }
-.theme-image-bg.blur-hero .hero-image-layer {
+.hero-area.blur-hero .hero-image-layer {
   -webkit-filter: blur(3px);
   filter: blur(3px); }
 
