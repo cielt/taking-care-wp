@@ -16,6 +16,7 @@
         $homeSlideRefreshBtn = $('.slide-controls .slide-refresh-btn'),
         homeSlidesArr = [],
         headerWaypoint,
+        chapterWaypoint,
         $scrollDownArrow = $marqueeMain.find('.scroll-to-content-btn'),
         $siteNavBlock = $('.site-nav-block'),
         $siteNavMenu = $('.site-nav-menu');
@@ -85,7 +86,7 @@
 
       headerWaypoint = new Waypoint({
         element: $heroEl,
-        handler: function (direction) {
+        handler: function(direction) {
           if (direction === 'up') {
             $body.removeClass('scroll-down');
           } else {
@@ -98,6 +99,24 @@
         }
       });
     }
+
+    // Chapter Waypoint
+    if (bodyLayout === 'tc-chapter') {
+      chapterWaypoint = new Waypoint({
+        element: $('#chapter-intro'),
+        handler: function(direction) {
+          var $marqueeFrame = $('.theme-image-bg');
+
+          if (direction === 'up') {
+            $marqueeFrame.removeClass('blur-hero');
+          } else {
+            $marqueeFrame.addClass('blur-hero');
+          }    
+        },
+        offset: '35%'
+      });
+    }
+
   });
 
 })(jQuery);

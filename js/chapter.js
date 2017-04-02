@@ -5,10 +5,10 @@
 
   $(function () {
     var $grid = $('.masonry-grid'),
-        $heroImgScreen = $('.theme-image-bg'),
+        $heroImageLayer = $('.hero-image-layer'),
         chapterCoverImage = $('.cover-img-src').data('imgSrc');
 
-    $heroImgScreen.css({ 'background-image': 'url('+ chapterCoverImage +')' });
+    $heroImageLayer.css({ 'background-image': 'url('+ chapterCoverImage +')' });
          
     $grid.imagesLoaded(
       function () {

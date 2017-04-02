@@ -44,27 +44,6 @@
   opacity: $value / 100;
 }
 
-@mixin perspective($perspective) {
-  perspective: $perspective;
-  -moz-perspective: $perspective;
-  -webkit-perspective: $perspective;
-}
-
-@mixin property-transition($transition-details) {
-  -webkit-transform: $transition-details;
-  -moz-transition: $transition-details;
-  -o-transition: $transition-details;
-  transition: $transition-details;
-}
-
-@mixin transform($transform-details) {
-  -webkit-transform: $transform-details;
-  -moz-transform: $transform-details;
-  -ms-transform: $transform-details;
-  -o-transform: $transform-details;
-  transform: $transform-details;
-}
-
 // ----- img replacement / conceal text ----- //
 
 @mixin hide-text() {

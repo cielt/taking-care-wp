@@ -30,3 +30,32 @@
     @include opacity(24);
   }
 }
+
+
+// -------------------------------------
+//   Chapter
+// -------------------------------------
+
+// Hero Area - on scroll up
+
+.theme-image-bg {
+  .hero-overlay {
+    transition: 1s opacity ease;
+  }
+
+  .hero-image-layer {
+    transition: 1s filter ease;  
+  }
+
+  // on scroll up
+  &.blur-hero {
+    .hero-overlay {
+    @include opacity(72);
+  }
+
+  .hero-image-layer {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+  }  
+  }
+}

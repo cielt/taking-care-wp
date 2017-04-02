@@ -13,13 +13,15 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
 <div class="cover-image-spacing"></div>
-<div class="theme-image-bg theme-chapter-1">
+<div class="theme-image-bg">
   <div class="marquee-main chapter-cover w-max mx-auto p-rel">
+    <div class="hero-image-layer">
+      <div class="vis-hidden cover-img-src" data-img-src="<?php echo get_field('cover_image') ?>"></div>
+    </div>
     <div class="cover-image-overlay hero-overlay"></div>
     <div class="cover-image-title">
       <?php the_title( '<h1 class="h1 m--ts-xxxl c-white mb-1">', '</h1>' ); ?>
       <span class="h3 db c-blueGrey0 tf-sans light"><?php echo get_field('start_year') ?> &ndash; <?php echo get_field('end_year') ?></span>
-      <div class="vis-hidden cover-img-src" data-img-src="<?php echo get_field('cover_image') ?>"></div>
     </div>
     <a href="#chapter-intro" class="scroll-to-content-btn c-white" data-offset="0">
       <b class="fa fa-angle-down fa-2x" aria-hidden="true"></b>

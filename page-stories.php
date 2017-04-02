@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <div class="cover-image-spacing"></div>
-<div class="theme-image-bg theme-chapter-1" style="background-color: #000;">
+<div class="theme-image-bg">
   <div class="marquee-main chapter-cover w-max mx-auto p-rel">
     <div class="cover-image-overlay hero-overlay"></div>
     <div class="cover-image-title">
@@ -18,8 +18,7 @@ get_header(); ?>
       <div class="w-max max-gm mx-auto px-6">
         <h1 class="h1 m--ts-xxxl c-white mb-1">Stories</h1>
         <p class="ts-xs xs--ts-l db c-blueGrey0 tf-serif">
-          Yen-Sheng remembered people with effortless sensitivity, and took great pleasure in sharing tales with friends and family.  
-          Here, we pay tribute to the fond storyteller in our own words.  
+          Yen-Sheng remembered people with effortless sensitivity, and took great pleasure in sharing tales with friends and family.  Here, we pay tribute to the ardent storyteller in our own words.  
         </p>
       </div>
     </div>
