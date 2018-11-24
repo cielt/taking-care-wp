@@ -163,7 +163,6 @@ function register_story() { // A unique name for our function
  */
 function taking_care_styles() {
 	wp_enqueue_style( 'tc-google-fonts', 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700', false );
-	wp_enqueue_style( 'font_awesome_css', get_template_directory_uri() . '/font-awesome.min.css', false );
 	wp_enqueue_style( 'taking-care-style', get_stylesheet_uri(), false ); 
 
 	// slick CSS
@@ -175,10 +174,14 @@ add_action( 'wp_enqueue_scripts', 'taking_care_styles' );
 
 
 function taking_care_scripts() {
-	wp_enqueue_script( 'jquery-waypoints', get_template_directory_uri() . '/js/lib/jquery.waypoints.min.js', array('jquery'), '2017', true );
-	wp_enqueue_script( 'taking-care-utilities', get_template_directory_uri() . '/js/utilities.js', array('jquery'), '2017', true );
-	wp_enqueue_script( 'taking-care-navigation', get_template_directory_uri() . '/js/mom.js', array('jquery', 'jquery-waypoints', 'taking-care-utilities'), '2017', true );
-	wp_enqueue_script( 'taking-care-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'jquery-waypoints', get_template_directory_uri() . '/js/lib/jquery.waypoints.min.js', array('jquery'), '2018', false );
+	wp_enqueue_script( 'taking-care-utilities', get_template_directory_uri() . '/js/utilities.js', array('jquery'), '2018', false );
+	wp_enqueue_script( 'taking-care-navigation', get_template_directory_uri() . '/js/mom.js', array('jquery', 'jquery-waypoints', 'taking-care-utilities'), '2018', false );
+	wp_enqueue_script( 'taking-care-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', false );
+
+	// FontAwesome - SVG solid
+	wp_enqueue_script('font-awesome-solid', 'https://use.fontawesome.com/releases/v5.5.0/js/solid.js', [], '2018', false);
+	wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/releases/v5.5.0/js/fontawesome.js', [], '2018', false);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -186,18 +189,18 @@ function taking_care_scripts() {
 
 	// scripts for Chapter page template
 	if ( is_page_template('page-chapter.php') ) {
-		wp_enqueue_script( 'taking-care-chapter', get_template_directory_uri() . '/js/chapter.js', array('jquery', 'imagesloaded', 'jquery-masonry', 'taking-care-utilities'), '2017', true );	
+		wp_enqueue_script( 'taking-care-chapter', get_template_directory_uri() . '/js/chapter.js', array('jquery', 'imagesloaded', 'jquery-masonry', 'taking-care-utilities'), '2018', true );	
 	}
 
 	// scripts for Stories page template
 	if ( is_page_template('page-stories.php') ) {
-		wp_enqueue_script( 'taking-care-stories', get_template_directory_uri() . '/js/stories.js', array('jquery', 'imagesloaded', 'jquery-masonry', 'taking-care-utilities'), '2017', true );	
+		wp_enqueue_script( 'taking-care-stories', get_template_directory_uri() . '/js/stories.js', array('jquery', 'imagesloaded', 'jquery-masonry', 'taking-care-utilities'), '2018', true );	
 	}
 
 	// scripts for Chapter slideshow template
 	if ( is_page_template('page-chapter-slideshow.php') ) {
-		wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array('jquery'), '2017', true );
-		wp_enqueue_script( 'taking-care-chapter-slideshow', get_template_directory_uri() . '/js/slideshow.js', array('jquery', 'slick', 'taking-care-utilities'), '2017', true );	
+		wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array('jquery'), '2018', true );
+		wp_enqueue_script( 'taking-care-chapter-slideshow', get_template_directory_uri() . '/js/slideshow.js', array('jquery', 'slick', 'taking-care-utilities'), '2018', true );	
 	}
 }
 add_action( 'wp_enqueue_scripts', 'taking_care_scripts' );
@@ -209,6 +212,29 @@ function stories_feed_new_excerpt_more($more) {
 	return ' <span class="vis-hidden">Read more </span> &hellip; ';
 }
 add_filter('excerpt_more', 'stories_feed_new_excerpt_more');
+
+
+// Load selected scripts with defer
+function add_defer_attribute($tag, $handle) {
+   // add script handles to the array below
+   $scripts_to_defer = array('font-awesome-solid', 'font-awesome');
+   
+   foreach($scripts_to_defer as $defer_script) {
+      if ($defer_script === $handle) {
+				switch ($handle) {
+					case 'font-awesome-solid':
+						return str_replace(' src', ' defer="defer" integrity="sha384-Xgf/DMe1667bioB9X1UM5QX+EG6FolMT4K7G+6rqNZBSONbmPh/qZ62nBPfTx+xG" crossorigin="anonymous" src', $tag);
+					case 'font-awesome':
+						return str_replace(' src', ' defer="defer" integrity="sha384-bNOdVeWbABef8Lh4uZ8c3lJXVlHdf8W5hh1OpJ4dGyqIEhMmcnJrosjQ36Kniaqm" crossorigin="anonymous" src', $tag);
+					default:
+						return str_replace(' src', ' defer="defer" crossorigin="anonymous" src', $tag);
+				}
+      }
+   }
+   return $tag;
+}
+add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
+
 
 /**
  * Implement the Custom Header feature.

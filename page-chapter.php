@@ -37,7 +37,7 @@ get_header(); ?>
       <div class="g-b g-b--1of1 g-b--m--6of12 mb-5 m--mb0">
         <div class="m--pa2">
           <span class="date dib mb-1 mr-2"><?php echo get_field('start_year') ?> &mdash; <?php echo get_field('end_year') ?></span>
-          <span class="date upper dib mb-2"><b class="fa fa-map-marker" aria-hidden="true"></b> <?php echo the_field('chapter_location', $parent_id) ?></span>
+          <span class="date upper dib mb-2"><b class="fa fa-map-marker-alt" aria-hidden="true"></b> <?php echo the_field('chapter_location', $parent_id) ?></span>
           <?php the_title( '<h1 class="h2 c-blue0 normal mb-1">', '</h1>' ); ?>
           <?php the_content(); ?>
           </div>
