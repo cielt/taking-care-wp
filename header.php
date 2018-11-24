@@ -31,7 +31,7 @@
         <div class="site-nav-wrapper">
           <h3 id="site-menu" class="menu tf-sans ts-s mb-5 upper c-blueGrey0 bold">Menu</h3>
           <a href="#" id="close-menu-btn" class="close-menu">
-            <b class="fa fa-times" aria-hidden="true"></b><span class="vis-hidden">Close Menu</span>
+            <b class="fas fa-times" aria-hidden="true"></b><span class="vis-hidden">Close Menu</span>
           </a>
           <?php wp_nav_menu( array( 'theme_location' => 'global_menu', 'container' => false, 'menu_id' => 'global-nav', 'menu_class' => 'site-nav-menu' ) ); ?>
         </div>
@@ -47,7 +47,7 @@
                 <span class="ico ico-swallow dib mr-1 va-m lh-reset"></span><em class="home-label"><?php bloginfo( 'name' ); ?></em>
               </a>
               <div class="header-bar-block fr">
-                <a href="#" id="global-menu-btn" class="menu-btn"><b class="fa fa-bars dib mr-1" aria-hidden="true"></b> Menu</a>
+                <a href="#" id="global-menu-btn" class="menu-btn"><b class="fas fa-bars dib mr-1" aria-hidden="true"></b> Menu</a>
               </div>
             </div>
           </div>

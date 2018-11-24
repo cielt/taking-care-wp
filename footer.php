@@ -23,11 +23,11 @@
         </div>
         <div class="g-b g-b--1of1 g-b--m--1of12">&nbsp;</div>
         <div class="g-b g-b--1of1 g-b--m--2of12 px-0">
-          <a class="footer-cta" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Share a Story' ))); ?>">Share a Story <b class="fa fa-comment dib" aria-hidden="true"></b></a>
+          <a class="footer-cta" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Share a Story' ))); ?>">Share a Story <b class="fas fa-book-open dib" aria-hidden="true"></b></a>
         </div>
         <div class="g-b g-b--1of1 g-b--m--1of12">&nbsp;</div>
         <div class="g-b g-b--1of1 g-b--m--2of12 px-0">
-          <a class="footer-cta" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact Us' ))); ?>">Contact Us <b class="fa fa-envelope dib" aria-hidden="true"></b></a>
+          <a class="footer-cta" href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact Us' ))); ?>">Contact Us <b class="fas fa-envelope dib" aria-hidden="true"></b></a>
         </div>
       </div>
       <div class="copyright"><p class="ts-s c-blueGrey0 italic">&copy; <?php echo date("Y"); ?> <?php bloginfo( 'name' ); ?></p></div>

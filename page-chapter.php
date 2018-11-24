@@ -24,7 +24,7 @@ get_header(); ?>
       <span class="h3 db c-blueGrey0 tf-sans light"><?php echo get_field('start_year') ?> &ndash; <?php echo get_field('end_year') ?></span>
     </div>
     <a href="#chapter-intro" class="scroll-to-content-btn c-white" data-offset="0">
-      <b class="fa fa-angle-down fa-2x" aria-hidden="true"></b>
+      <b class="fas fa-angle-down fa-2x" aria-hidden="true"></b>
       <span class="vis-hidden">scroll down to page content</span>
     </a>
   </div>
@@ -37,7 +37,7 @@ get_header(); ?>
       <div class="g-b g-b--1of1 g-b--m--6of12 mb-5 m--mb0">
         <div class="m--pa2">
           <span class="date dib mb-1 mr-2"><?php echo get_field('start_year') ?> &mdash; <?php echo get_field('end_year') ?></span>
-          <span class="date upper dib mb-2"><b class="fa fa-map-marker-alt" aria-hidden="true"></b> <?php echo the_field('chapter_location', $parent_id) ?></span>
+          <span class="date upper dib mb-2"><b class="fas fa-map-marker-alt" aria-hidden="true"></b> <?php echo the_field('chapter_location', $parent_id) ?></span>
           <?php the_title( '<h1 class="h2 c-blue0 normal mb-1">', '</h1>' ); ?>
           <?php the_content(); ?>
           </div>
@@ -57,7 +57,7 @@ get_header(); ?>
                 $slideshow_children = $slideshow_wp_query->query(array('post_type' => 'page', 'meta_key' => 'page_template', 'meta_value' => 'chapter_slideshow', 'post_parent' => $current_page_id));
                 ?>
               <?php foreach ( $slideshow_children as $slideshow ) : ?>
-                <a href="<?php echo get_permalink($slideshow); ?>" class="section-heading-cta">View Slideshow <b class="fa fa-camera" aria-hidden="true"></b></a>
+                <a href="<?php echo get_permalink($slideshow); ?>" class="section-heading-cta">View Slideshow <b class="fas fa-camera" aria-hidden="true"></b></a>
               <?php endforeach; ?>
             </div>
           </div>

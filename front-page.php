@@ -30,7 +30,7 @@ get_header(); ?>
   <div class="slide-controls">
   </div>
   <a href="#home-intro" class="scroll-to-content-btn c-white" data-offset="0">
-    <b class="fa fa-angle-down fa-2x" aria-hidden="true"></b>
+    <b class="fas fa-angle-down fa-2x" aria-hidden="true"></b>
     <span class="vis-hidden">scroll down to page content</span>
   </a>
 </div>

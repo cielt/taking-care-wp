@@ -55,7 +55,7 @@ get_header(); ?>
         <div class="content-nav-prev g-b g-b--1of1 g-b--m--6of12 t-alignL <?php if (!$prev) { echo 'dn m--show'; } ?>">
           <?php if ($prev) : ?>
             <span class="db ts-xs upper c-blueGrey0 mb-2">Previous</span>
-            <?php previous_post_link( '%link', __( '<b class="fa fa-chevron-left" aria-hidden="true"></b> %title') ); ?>
+            <?php previous_post_link( '%link', __( '<b class="fas fa-chevron-left" aria-hidden="true"></b> %title') ); ?>
           <?php else : ?>
             &nbsp;
           <?php endif; ?>
@@ -66,7 +66,7 @@ get_header(); ?>
         <div class="content-nav-next g-b g-b--1of1 g-b--m--6of12 t-alignR <?php if (!$next) { echo 'dn m--show'; } ?>">
           <?php if ($next) : ?>
             <span class="db ts-xs upper c-blueGrey0 mb-2">Next</span>
-            <?php next_post_link( '%link', __( ' %title <b class="fa fa-chevron-right" aria-hidden="true"></b>') ); ?>
+            <?php next_post_link( '%link', __( ' %title <b class="fas fa-chevron-right" aria-hidden="true"></b>') ); ?>
           <?php else : ?>
             &nbsp;  
           <?php endif; ?>

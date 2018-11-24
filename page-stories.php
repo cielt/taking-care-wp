@@ -23,7 +23,7 @@ get_header(); ?>
       </div>
     </div>
     <a href="#chapter-intro" class="scroll-to-content-btn c-white" data-offset="0">
-      <b class="fa fa-angle-down fa-2x" aria-hidden="true"></b>
+      <b class="fas fa-angle-down fa-2x" aria-hidden="true"></b>
       <span class="vis-hidden">scroll down to page content</span>
     </a>
   </div>
@@ -38,7 +38,7 @@ get_header(); ?>
             <h2 class="ts-l c-blueGrey0 mb-1 m--mb0 tf-sans upper section-title">Stories</h2>
           </div>
           <div class="section-actions g-b g-b--1of1 g-b--m--4of12 px-0 m--t-alignR">
-            <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Share a Story' ))); ?>" class="section-heading-cta">Share a Story <b class="fa fa-comment dib" aria-hidden="true"></b></a>
+            <a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Share a Story' ))); ?>" class="section-heading-cta">Share a Story <b class="fas fa-book-open dib" aria-hidden="true"></b></a>
           </div>
         </div>
         <hr class="hairline mt-2 mb-4">
