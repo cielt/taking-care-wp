@@ -51,7 +51,7 @@ get_header(); ?>
       <div id="slideshow" class="slideshow">
         <!-- loading -->
         <div class="loading-msg pt-2 pb-6 t-alignC">
-          <div class="px-6 mb-6"><img class="fit" src="https://objects-us-west-1.dream.io/taking-care/theme/flying-swallow.gif" alt=""></div>
+          <div class="px-6 mb-6"><img class="fit" src="https://cdn.taking-care.us/wp-content/themes/taking-care/images/flying-swallow.gif" alt=""></div>
           <p class="c-grey5 upper tf-sans">Loading &hellip;</p>
         </div>
         <!-- markers, controls -->
