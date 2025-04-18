@@ -33,7 +33,7 @@
           <a href="#" id="close-menu-btn" class="close-menu">
             <b class="fas fa-times" aria-hidden="true"></b><span class="vis-hidden">Close Menu</span>
           </a>
-          <?php wp_nav_menu( array( 'theme_location' => 'global_menu', 'container' => false, 'menu_id' => 'global-nav', 'menu_class' => 'site-nav-menu' ) ); ?>
+          <?php wp_nav_menu( array( 'theme_location' => 'global_menu', 'container' => false, 'menu_id' => 'global-nav', 'menu_class' => 'site-nav-menu', 'depth' => 1 ) ); ?>
         </div>
       </div>
       <div class="scaffold-inner<?php if (is_page_template('page-chapter-slideshow.php')) { echo ' bg-black'; }?>">
